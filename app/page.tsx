@@ -7,7 +7,7 @@ import { button as buttonStyles } from "@heroui/theme";
 
 export default function Home() {
   return (
-    <section className="relative flex flex-col items-center justify-center gap-6 py-16 md:py-24 bg-gradient-to-r from-blue-50 to-indigo-100 overflow-hidden">
+    <section className="relative flex flex-col items-center justify-center gap-6 py-16 md:py-24 overflow-hidden">
       {/* Dekoracje w tle */}
       <motion.div
         className="absolute -top-10 -left-10 w-40 h-40 bg-blue-300 opacity-40 rounded-full blur-3xl"
