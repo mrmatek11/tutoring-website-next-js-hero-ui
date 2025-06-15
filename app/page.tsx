@@ -2,104 +2,1254 @@
 
 import { motion } from "framer-motion";
 import { Link } from "@heroui/link";
+import { Button } from "@heroui/button";
+import { Card, CardBody } from "@heroui/card";
+import { Chip } from "@heroui/chip";
+import { Avatar, AvatarGroup } from "@heroui/avatar";
+import { Badge } from "@heroui/badge";
+import { Progress } from "@heroui/progress";
 import { title, subtitle } from "@/components/primitives";
-import { button as buttonStyles } from "@heroui/theme";
+import { useState, useEffect } from "react";
+import { Divider } from "@heroui/divider";
+import PricingTable from "@/components/PricingTable";
+import StudentSuccessCards from "@/components/StudentSuccessCards";
+import SuccessStories from "@/components/SuccessStories";
+import CallToActionContact from "@/components/CallToActionContact";
 
-export default function Home() {
+export default function LingGlowImproved() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
   return (
-    <section className="relative flex flex-col items-center justify-center gap-6 py-16 md:py-24 overflow-hidden">
-      {/* Dekoracje w tle */}
-      <motion.div
-        className="absolute -top-10 -left-10 w-40 h-40 bg-blue-300 opacity-40 rounded-full blur-3xl"
-        animate={{ scale: [1, 1.1, 1], opacity: [0.4, 0.6, 0.4] }}
-        transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="absolute bottom-10 -right-10 w-40 h-40 bg-yellow-300 opacity-40 rounded-full blur-3xl"
-        animate={{ scale: [1, 1.1, 1], opacity: [0.4, 0.6, 0.4] }}
-        transition={{ repeat: Infinity, duration: 6, ease: "easeInOut", delay: 2 }}
-      />
-
-      <div className="grid max-w-7xl grid-cols-1 md:grid-cols-2 gap-12 px-6 z-10 items-center">
-        {/* Lewa kolumna */}
+    <div className="min-h-screen">
+      {/* HERO SECTION - Zmniejszona wysokość, usunięte centrowanie w pionie */}
+      <section className="relative pt-16 pb-24 overflow-hidden">
+        {/* Floating background elements - zoptymalizowane */}
         <motion.div
-          className="text-center md:text-left"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-          <span className="inline-block mb-4 px-3 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded-full">
-            Najwyższa jakość nauki
-          </span>
-
-          <h1 className={title()}>
-            Korepetycje Online z&nbsp;
-            <span className={title({ color: "blue" })}>Języka Angielskiego</span>
-          </h1>
-
-          <div className={subtitle({ class: "mt-4 text-gray-700" })}>
-            Profesjonalne lekcje online z native speakerem. Indywidualne podejście do każdego ucznia.
-          </div>
-
-          <div className="mt-8 flex flex-wrap justify-center md:justify-start gap-4">
-            <Link
-              href="#bookly-form"
-              className={buttonStyles({ color: "primary", radius: "lg" })}
-            >
-              Umów Lekcję
-            </Link>
-            <Link
-              href="#kontakt"
-              className={buttonStyles({ color: "default", variant: "bordered", radius: "lg" })}
-            >
-              Skontaktuj się
-            </Link>
-          </div>
-
-          {/* Liczniki statystyk */}
-          <div className="grid grid-cols-3 gap-4 mt-12 text-center text-blue-600">
-            <div>
-              <div className="text-3xl font-bold">500+</div>
-              <div className="text-sm text-gray-500">Zadowolonych uczniów</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold">5000+</div>
-              <div className="text-sm text-gray-500">Godzin lekcji</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold">98%</div>
-              <div className="text-sm text-gray-500">Zdawalność egzaminów</div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Prawa kolumna - obrazek */}
+          className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-r from-emerald-200/20 to-green-300/20 rounded-full blur-3xl"
+          animate={{ 
+            scale: [1, 1.2, 1], 
+            opacity: [0.3, 0.5, 0.3],
+            x: [0, 30, 0],
+            y: [0, -20, 0]
+          }}
+          transition={{ 
+            repeat: Infinity, 
+            duration: 8, 
+            ease: "easeInOut" 
+          }}
+        />
+        
         <motion.div
-          className="relative mx-auto max-w-md"
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-          {/* Obwódka animowana */}
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full blur-xl scale-105 animate-pulse"></div>
-          <img
-            src="https://server982666.nazwa.pl/wp/wp-content/uploads/2025/04/IMG_6803_ze_zmianami.png"
-            alt="Lekcje języka angielskiego online"
-            className="relative z-10 w-full h-auto drop-shadow-2xl rounded-full border-4 border-white"
-          />
-          {/* Dodatkowe pływające elementy */}
-          <motion.div
-            className="absolute top-1/4 -right-6 w-12 h-12 bg-blue-100 rounded-full z-0"
-            animate={{ y: [0, -10, 0] }}
-            transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-          />
-          <motion.div
-            className="absolute bottom-1/4 -left-6 w-16 h-16 bg-yellow-100 rounded-full z-0"
-            animate={{ y: [0, 10, 0] }}
-            transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-          />
-        </motion.div>
-      </div>
-    </section>
+          className="absolute bottom-32 right-16 w-96 h-96 bg-gradient-to-l from-blue-200/15 to-emerald-200/20 rounded-full blur-3xl"
+          animate={{ 
+            scale: [1, 1.1, 1], 
+            opacity: [0.2, 0.4, 0.2],
+            x: [0, -40, 0],
+            y: [0, 15, 0]
+          }}
+          transition={{ 
+            repeat: Infinity, 
+            duration: 10, 
+            ease: "easeInOut",
+            delay: 3
+          }}
+        />
+
+        <motion.div
+          className="absolute top-1/3 right-1/4 w-32 h-32 bg-gradient-to-br from-yellow-200/25 to-amber-300/20 rounded-full blur-2xl"
+          animate={{ 
+            scale: [1, 1.3, 1], 
+            opacity: [0.25, 0.45, 0.25] 
+          }}
+          transition={{ 
+            repeat: Infinity, 
+            duration: 6, 
+            ease: "easeInOut",
+            delay: 1
+          }}
+        />
+
+        <div className="container mx-auto px-6 lg:px-8 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
+            
+            {/* Left Column - Content */}
+            <motion.div
+              className="text-center lg:text-left space-y-8"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              {/* Badge */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.2, duration: 0.6 }}
+                className="inline-flex items-center"
+              >
+                <Chip 
+                  color="success" 
+                  variant="flat" 
+                  size="lg"
+                  startContent={
+                    <div className="w-2 h-2 bg-primary-700 rounded-full animate-pulse"></div>
+                  }
+                >
+                  Linglow - Nauka z pasją
+                </Chip>
+              </motion.div>
+
+              {/* Main Heading */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.8 }}
+              >
+                <h1 className={title({ size: "lg" })}>
+                  <span className="text-primary">Spokojnie.</span>
+                  <br />
+                  <span className="text-emerald-500">Twój angielski</span>
+                  <br />
+                  <span className="bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 bg-clip-text text-transparent">
+                    nabierze płynności.
+                  </span>
+                </h1>
+              </motion.div>
+
+              {/* Subtitle */}
+              <motion.p
+                className={subtitle({ class: "max-w-2xl" })}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6, duration: 0.8 }}
+              >
+                <span className="text-primary-700 font-medium">Indywidualne lekcje, które dostosowują się do Ciebie – bez presji, bez sztywnych reguł.</span> 
+                <br />
+                <span className="text-emerald-600 font-medium">Z nami nauczysz się angielskiego</span>
+                <br />
+                <span className="text-emerald-700 font-medium"> Skutecznie, z wyczuciem, w Twoim rytmie.</span>
+              </motion.p>
+
+              {/* CTA Button */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8, duration: 0.8 }}
+                className="pt-4"
+              >
+                <Button
+                  as={motion.button}
+                  color="success"
+                  size="lg"
+                  radius="lg"
+                  className="bg-gradient-to-r from-emerald-600 to-green-600 text-white font-semibold px-8 py-6 text-lg shadow-lg"
+                  endContent={
+                    <motion.svg
+                      className="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      initial={{ x: 0 }}
+                      whileHover={{ x: 5 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </motion.svg>
+                  }
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  Zrób pierwszy krok
+                </Button>
+              </motion.div>
+
+              {/* Trust indicators */}
+              <motion.div
+                className="pt-8 space-y-4"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1, duration: 0.8 }}
+              >
+                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6">
+                  <div className="flex items-center gap-3">
+                    <AvatarGroup max={4} size="sm">
+                      <Avatar src="https://i.pravatar.cc/150?u=1" />
+                      <Avatar src="https://i.pravatar.cc/150?u=2" />
+                      <Avatar src="https://i.pravatar.cc/150?u=3" />
+                      <Avatar src="https://i.pravatar.cc/150?u=4" />
+                    </AvatarGroup>
+                    <span className="text-sm text-gray-600">500+ zadowolonych uczniów</span>
+                  </div>
+                  
+                  <Chip color="warning" variant="flat" size="sm">
+                    <div className="flex items-center gap-1">
+                      <div className="flex text-yellow-500">
+                        {[1,2,3,4,5].map((i) => (
+                          <svg key={i} className="w-3 h-3 fill-current" viewBox="0 0 20 20">
+                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                          </svg>
+                        ))}
+                      </div>
+                      <span className="ml-1">5.0 średnia ocen</span>
+                    </div>
+                  </Chip>
+                </div>
+
+                <Card className="max-w-md">
+                  <CardBody className="p-4">
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-sm font-medium text-emerald-900">Postęp uczniów</span>
+                      <Badge color="success" size="sm">95%</Badge>
+                    </div>
+                    <Progress 
+                      value={95} 
+                      color="success" 
+                      size="sm"
+                      className="mb-2"
+                    />
+                    <p className="text-xs text-gray-500">
+                      95% uczniów osiąga swoje cele w ciągu 3 miesięcy
+                    </p>
+                  </CardBody>
+                </Card>
+              </motion.div>
+            </motion.div>
+
+            {/* Right Column - Abstract Shapes Visual */}
+            <motion.div
+              className="relative mx-auto max-w-lg lg:max-w-xl"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+            >
+              {/* Main container with abstract shapes */}
+              <div className="relative aspect-square">
+                {/* Central glowing circle */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-br from-emerald-400/30 to-green-500/40 rounded-full blur-2xl"
+                  animate={{ 
+                    scale: [1, 1.1, 1],
+                    opacity: [0.6, 0.8, 0.6]
+                  }}
+                  transition={{ 
+                    repeat: Infinity, 
+                    duration: 4, 
+                    ease: "easeInOut" 
+                  }}
+                />
+
+                {/* Abstract geometric shapes */}
+                <motion.div
+                  className="absolute inset-4 rounded-3xl overflow-hidden bg-gradient-to-br from-white/10 to-emerald-50/50 backdrop-blur-sm border border-emerald-200/30"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                >
+                  {/* Floating geometric elements */}
+                  <motion.div
+                    className="absolute top-8 left-8 w-16 h-16 bg-gradient-to-br from-emerald-400 to-green-500 rounded-2xl rotate-12"
+                    animate={{ 
+                      rotate: [12, 25, 12],
+                      y: [0, -10, 0]
+                    }}
+                    transition={{ 
+                      repeat: Infinity, 
+                      duration: 6, 
+                      ease: "easeInOut" 
+                    }}
+                  />
+                  
+                  <motion.div
+                    className="absolute top-1/2 right-8 w-12 h-12 bg-gradient-to-br from-blue-400 to-emerald-400 rounded-full"
+                    animate={{ 
+                      scale: [1, 1.2, 1],
+                      x: [0, -5, 0]
+                    }}
+                    transition={{ 
+                      repeat: Infinity, 
+                      duration: 4, 
+                      ease: "easeInOut",
+                      delay: 2
+                    }}
+                  />
+                  
+                  <motion.div
+                    className="absolute bottom-12 left-1/2 -translate-x-1/2 w-20 h-8 bg-gradient-to-r from-yellow-400 to-amber-500 rounded-full"
+                    animate={{ 
+                      rotate: [0, -10, 0],
+                      scale: [1, 1.1, 1]
+                    }}
+                    transition={{ 
+                      repeat: Infinity, 
+                      duration: 5, 
+                      ease: "easeInOut",
+                      delay: 1
+                    }}
+                  />
+
+                  {/* Central abstract pattern */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <motion.div
+                      className="relative"
+                      animate={{ rotate: 360 }}
+                      transition={{ 
+                        repeat: Infinity, 
+                        duration: 20, 
+                        ease: "linear" 
+                      }}
+                    >
+                      <div className="w-32 h-32 border-4 border-emerald-300/50 rounded-full"></div>
+                      <div className="absolute inset-4 border-2 border-green-400/30 rounded-full"></div>
+                      <div className="absolute inset-8 border border-emerald-500/20 rounded-full"></div>
+                    </motion.div>
+                  </div>
+                </motion.div>
+
+                {/* Floating elements around the main shape */}
+                <motion.div
+                  className="absolute -top-4 -right-4 z-20"
+                  animate={{ 
+                    y: [0, -15, 0],
+                    rotate: [0, 10, 0]
+                  }}
+                  transition={{ 
+                    repeat: Infinity, 
+                    duration: 4, 
+                    ease: "easeInOut" 
+                  }}
+                >
+                  <Badge content="NEW" color="primary">
+                    <Card className="w-16 h-16">
+                      <CardBody className="flex items-center justify-center p-2 bg-gradient-to-br from-blue-400 to-blue-500">
+                        <span className="text-white font-bold text-sm">EN</span>
+                      </CardBody>
+                    </Card>
+                  </Badge>
+                </motion.div>
+
+                <motion.div
+                  className="absolute -bottom-4 -left-8 z-20"
+                  animate={{ 
+                    y: [0, 10, 0],
+                    x: [0, 5, 0]
+                  }}
+                  transition={{ 
+                    repeat: Infinity, 
+                    duration: 6, 
+                    ease: "easeInOut",
+                    delay: 1
+                  }}
+                >
+                  <Card className="w-20 h-20">
+                    <CardBody className="flex items-center justify-center p-2 bg-gradient-to-br from-yellow-400 to-amber-500">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                      </svg>
+                    </CardBody>
+                  </Card>
+                </motion.div>
+
+                <motion.div
+                  className="absolute top-1/3 -left-4 z-20"
+                  animate={{ 
+                    scale: [1, 1.2, 1],
+                    opacity: [0.8, 1, 0.8]
+                  }}
+                  transition={{ 
+                    repeat: Infinity, 
+                    duration: 3, 
+                    ease: "easeInOut",
+                    delay: 2
+                  }}
+                >
+                  <Chip color="success" size="lg">
+                    ✨
+                  </Chip>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Reszta sekcji pozostaje bez zmian... */}      <section className="relative py-24">
+        <div className="container mx-auto px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
+            
+            {/* Left Column - Content Container */}
+            <motion.div
+              className="space-y-8"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: true }}
+            >
+              <Card className="bg-white/70 backdrop-blur border-emerald-200/50 shadow-xl">
+                <CardBody className="p-8">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2, duration: 0.6 }}
+                    viewport={{ once: true }}
+                  >
+                    <Chip color="primary" variant="flat" className="mb-4">
+                      O mnie
+                    </Chip>
+                    <h1 className="text-3xl font-bold text-primary-300 mb-6">
+O mnie — ale dla Ciebie                    </h1>
+                     
+                    <div className="space-y-4 text-primary-300">
+                                            <p className="leading-relaxed font-bold ">
+
+                                            Angielski bez stresu, za to z celem.
+                      </p>
+
+                      <p className="leading-relaxed">
+Nie musisz znać wszystkich czasów ani mówić perfekcyjnie, żeby dogadać się z ludźmi. 
+Potrzebujesz tylko przestrzeni, w której możesz popełniać błędy, ćwiczyć bez presji i widzieć efekty.                      </p>
+                      <p className="leading-relaxed">
+Nazywam się Lidia i tworzę właśnie taką przestrzeń — pomagam przełamać blokadę, poczuć się pewnie i mówić po angielsku 
+w zgodzie ze sobą. Nie odhaczamy zadań z podręcznika. Rozmawiamy o tym, co dla Ciebie ważne. 
+Praktycznie, skutecznie i z lekkością.
+
+Chcesz, żeby angielski wreszcie miał sens? Zrób pierwszy krok. Ja zajmę się resztą.                      </p>
+                    </div>
+                  </motion.div>
+
+                  <motion.div
+                    className="mt-8 grid grid-cols-2 gap-4"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4, duration: 0.6 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="text-center p-4 bg-primary-300 rounded-lg">
+                      <div className="text-2xl font-bold text-primary-600">500+</div>
+                      <div className="text-sm text-primary-700">Uczniów</div>
+                    </div>
+                    <div className="text-center p-4 bg-primary-300 rounded-lg">
+                      <div className="text-2xl font-bold text-primary-600">5+</div>
+                      <div className="text-sm text-primary-700">Lat doświadczenia</div>
+                    </div>
+                  </motion.div>
+
+                  <motion.div
+                    className="mt-6"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.6, duration: 0.6 }}
+                    viewport={{ once: true }}
+                  >
+                    <Button
+                      color="primary"
+                      variant="flat"
+                      size="lg"
+                      className="w-full"
+                    >
+                      <p className="text-sm text-primary font-extrabold">Umów darmową konsultację</p>
+                    </Button>
+                  </motion.div>
+                </CardBody>
+              </Card>
+
+              {/* Certyfikaty/Osiągnięcia */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8, duration: 0.6 }}
+                viewport={{ once: true }}
+                className="flex flex-wrap gap-3"
+              >
+                <Chip color="success" variant="flat">TESOL Certified</Chip>
+                <Chip color="primary" variant="flat">Cambridge Certified</Chip>
+                <Chip color="secondary" variant="flat">Business English</Chip>
+              </motion.div>
+            </motion.div>
+
+            {/* Right Column - Twoje Zdjęcie */}
+            <motion.div
+              className="relative mx-auto max-w-md"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              <div className="relative">
+                {/* Glowing background */}
+                <motion.div
+                  className="absolute -inset-6 bg-gradient-to-r from-emerald-400/30 to-green-500/30 rounded-3xl blur-2xl"
+                  animate={{ 
+                    scale: [1, 1.05, 1],
+                    opacity: [0.5, 0.7, 0.5]
+                  }}
+                  transition={{ 
+                    repeat: Infinity, 
+                    duration: 4, 
+                    ease: "easeInOut" 
+                  }}
+                />
+
+                {/* Photo container */}
+                <Card className="relative z-10 overflow-hidden">
+                  <CardBody className="p-0">
+                    <motion.div
+                      className="aspect-[4/5] bg-gradient-to-br from-emerald-100 to-green-200 flex items-center justify-center text-emerald-700 font-semibold text-lg relative overflow-hidden"
+                      whileHover={{ scale: 1.02 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/50 to-transparent"></div>
+                      <div className="relative z-10">
+                        [Tutaj Twoje zdjęcie]
+                      </div>
+                    </motion.div>
+                  </CardBody>
+                </Card>
+
+                {/* Floating decorative elements */}
+                <motion.div
+                  className="absolute -top-4 -right-4 z-20"
+                  animate={{ 
+                    rotate: [0, 360],
+                    scale: [1, 1.1, 1]
+                  }}
+                  transition={{ 
+                    rotate: { repeat: Infinity, duration: 8, ease: "linear" },
+                    scale: { repeat: Infinity, duration: 4, ease: "easeInOut" }
+                  }}
+                >
+                  <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-full flex items-center justify-center">
+                    <span className="text-white font-bold">🎓</span>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  className="absolute -bottom-6 -left-6 z-20"
+                  animate={{ 
+                    y: [0, -10, 0],
+                    x: [0, 5, 0]
+                  }}
+                  transition={{ 
+                    repeat: Infinity, 
+                    duration: 5, 
+                    ease: "easeInOut",
+                    delay: 1
+                  }}
+                >
+                  <Card>
+                    <CardBody className="p-3 bg-gradient-to-br from-blue-400 to-blue-500">
+                      <div className="flex items-center gap-2 text-white">
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <span className="text-sm font-medium">5.0</span>
+                      </div>
+                    </CardBody>
+                  </Card>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+       </section>
+
+      {/* TRZECIA SEKCJA - JAK MOGĘ CI POMÓC */}
+      <section className="relative py-32 overflow-hidden">
+        {/* Animated background elements */}
+        <motion.div
+          className="absolute top-0 left-1/4 w-80 h-80 bg-gradient-to-r from-emerald-300/15 to-green-400/20 rounded-full blur-3xl"
+          animate={{ 
+            scale: [1, 1.3, 1], 
+            opacity: [0.2, 0.4, 0.2],
+            x: [0, 50, 0],
+            y: [0, -30, 0]
+          }}
+          transition={{ 
+            repeat: Infinity, 
+            duration: 12, 
+            ease: "easeInOut" 
+          }}
+        />
+        
+        <motion.div
+          className="absolute bottom-20 right-1/4 w-96 h-96 bg-gradient-to-l from-emerald-200/10 to-green-300/15 rounded-full blur-3xl"
+          animate={{ 
+            scale: [1, 1.2, 1], 
+            opacity: [0.15, 0.35, 0.15],
+            x: [0, -60, 0],
+            y: [0, 20, 0]
+          }}
+          transition={{ 
+            repeat: Infinity, 
+            duration: 14, 
+            ease: "easeInOut",
+            delay: 4
+          }}
+        />
+
+        <motion.div
+          className="absolute top-1/2 left-10 w-40 h-40 bg-gradient-to-br from-yellow-300/20 to-amber-400/25 rounded-full blur-2xl"
+          animate={{ 
+            scale: [1, 1.4, 1], 
+            opacity: [0.2, 0.4, 0.2],
+            rotate: [0, 180, 360]
+          }}
+          transition={{ 
+            repeat: Infinity, 
+            duration: 10, 
+            ease: "easeInOut",
+            delay: 2
+          }}
+        />
+
+        {/* Floating geometric shapes */}
+        <motion.div
+          className="absolute top-1/4 right-20 w-20 h-20 border-2 border-emerald-300/30 rounded-lg"
+          animate={{ 
+            rotate: [0, 45, 0],
+            y: [0, -20, 0]
+          }}
+          transition={{ 
+            repeat: Infinity, 
+            duration: 8, 
+            ease: "easeInOut" 
+          }}
+        />
+
+        <motion.div
+          className="absolute bottom-1/3 left-16 w-16 h-16 bg-gradient-to-br from-blue-400/20 to-emerald-400/30 rounded-full"
+          animate={{ 
+            scale: [1, 1.3, 1],
+            x: [0, 15, 0]
+          }}
+          transition={{ 
+            repeat: Infinity, 
+            duration: 6, 
+            ease: "easeInOut",
+            delay: 3
+          }}
+        />
+
+        <div className="container mx-auto px-6 lg:px-8 relative z-10">
+          <div className="max-w-6xl mx-auto">
+            
+            {/* Header */}
+            <motion.div
+              className="text-center mb-20"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: true }}
+            >
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.2, duration: 0.6 }}
+                viewport={{ once: true }}
+                className="mb-6"
+              >
+                <Chip 
+                  color="success" 
+                  variant="flat" 
+                  size="lg"
+                  startContent={
+                    <motion.div 
+                      className="w-2 h-2 bg-emerald-500 rounded-full"
+                      animate={{ scale: [1, 1.5, 1] }}
+                      transition={{ repeat: Infinity, duration: 2 }}
+                    />
+                  }
+                >
+                  Metodologia
+                </Chip>
+              </motion.div>
+
+              <motion.h2
+                className="text-4xl lg:text-5xl font-bold mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <span className="text-primary">Jak mogę Ci pomóc</span>
+                <br />
+                <span className="bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 bg-clip-text text-transparent">
+                  w nauce angielskiego?
+                </span>
+              </motion.h2>
+
+              <motion.p
+                className="text-lg text-primary-700 max-w-3xl mx-auto leading-relaxed"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <span className="font-medium text-emerald-700">To nie są lekcje jak każde inne.</span> To spotkania 1:1 oparte na zaufaniu i sprawdzonej strukturze — dopasowanej do Twojego stylu nauki.
+                <br />
+                <span className="font-medium text-primary-600">Bez presji, za to z szacunkiem, troską i realnym postępem.</span>
+              </motion.p>
+            </motion.div>
+
+            {/* Cards Grid */}
+            <div className="grid lg:grid-cols-3 gap-8 mb-16">
+              {/* Card 1 - Indywidualnie */}
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <Card 
+                  className="h-full bg-gradient-to-br from-white/80 to-emerald-50/60 backdrop-blur-sm border-emerald-200/50 shadow-xl hover:shadow-2xl transition-all duration-300"
+                  as={motion.div}
+                  whileHover={{ 
+                    scale: 1.02,
+                    boxShadow: "0 25px 50px -12px rgba(16, 185, 129, 0.25)"
+                  }}
+                >
+                  <CardBody className="p-8 relative overflow-hidden">
+                    {/* Floating glow effect */}
+                    <motion.div
+                      className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-emerald-400/30 to-green-500/40 rounded-full blur-xl"
+                      animate={{ 
+                        scale: [1, 1.3, 1],
+                        opacity: [0.3, 0.6, 0.3]
+                      }}
+                      transition={{ 
+                        repeat: Infinity, 
+                        duration: 4, 
+                        ease: "easeInOut" 
+                      }}
+                    />
+
+                    {/* Icon */}
+                    <motion.div
+                      className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-green-600 rounded-2xl flex items-center justify-center mb-6 relative z-10"
+                      whileHover={{ rotate: 5 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    >
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                      </svg>
+                    </motion.div>
+
+                    <h3 className="text-2xl font-bold text-primary-900 mb-4 relative z-10">
+                      Indywidualnie
+                    </h3>
+                    
+                    <p className="text-primary-700 leading-relaxed relative z-10">
+                      Każda lekcja powstaje z myślą o Tobie. Dostosowuję materiał, styl pracy i tempo do Twoich potrzeb — żadnych gotowców ani przypadkowych tematów.
+                    </p>
+
+                    {/* Decorative elements */}
+                    <motion.div
+                      className="absolute bottom-4 right-4 w-12 h-12 border-2 border-emerald-300/40 rounded-lg"
+                      animate={{ rotate: [0, 180, 360] }}
+                      transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
+                    />
+                  </CardBody>
+                </Card>
+              </motion.div>
+
+              {/* Card 2 - Bez stresu */}
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                viewport={{ once: true }}
+              >
+                <Card 
+                  className="h-full bg-gradient-to-br from-white/80 to-blue-50/60 backdrop-blur-sm border-blue-200/50 shadow-xl hover:shadow-2xl transition-all duration-300"
+                  as={motion.div}
+                  whileHover={{ 
+                    scale: 1.02,
+                    boxShadow: "0 25px 50px -12px rgba(59, 130, 246, 0.25)"
+                  }}
+                >
+                  <CardBody className="p-8 relative overflow-hidden">
+                    {/* Floating glow effect */}
+                    <motion.div
+                      className="absolute -top-4 -left-4 w-24 h-24 bg-gradient-to-br from-blue-400/30 to-emerald-400/40 rounded-full blur-xl"
+                      animate={{ 
+                        scale: [1, 1.2, 1],
+                        opacity: [0.4, 0.7, 0.4]
+                      }}
+                      transition={{ 
+                        repeat: Infinity, 
+                        duration: 5, 
+                        ease: "easeInOut",
+                        delay: 1
+                      }}
+                    />
+
+                    {/* Icon */}
+                    <motion.div
+                      className="w-16 h-16 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-2xl flex items-center justify-center mb-6 relative z-10"
+                      whileHover={{ rotate: -5 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    >
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                      </svg>
+                    </motion.div>
+
+                    <h3 className="text-2xl font-bold text-primary-900 mb-4 relative z-10">
+                      Bez stresu i presji
+                    </h3>
+                    
+                    <p className="text-primary-700 leading-relaxed relative z-10">
+                      Tu nie ma ocen, rywalizacji ani sztywnej atmosfery. Budujemy przestrzeń, w której możesz uczyć się na spokojnie — po swojemu, we własnym rytmie.
+                    </p>
+
+                    {/* Decorative elements */}
+                    <motion.div
+                      className="absolute bottom-6 right-6 w-8 h-8 bg-gradient-to-br from-yellow-400/60 to-amber-500/70 rounded-full"
+                      animate={{ 
+                        scale: [1, 1.4, 1],
+                        opacity: [0.6, 1, 0.6]
+                      }}
+                      transition={{ 
+                        repeat: Infinity, 
+                        duration: 3, 
+                        ease: "easeInOut",
+                        delay: 2
+                      }}
+                    />
+                  </CardBody>
+                </Card>
+              </motion.div>
+
+              {/* Card 3 - Zauważalne efekty */}
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <Card 
+                  className="h-full bg-gradient-to-br from-white/80 to-yellow-50/60 backdrop-blur-sm border-yellow-200/50 shadow-xl hover:shadow-2xl transition-all duration-300"
+                  as={motion.div}
+                  whileHover={{ 
+                    scale: 1.02,
+                    boxShadow: "0 25px 50px -12px rgba(245, 158, 11, 0.25)"
+                  }}
+                >
+                  <CardBody className="p-8 relative overflow-hidden">
+                    {/* Floating glow effect */}
+                    <motion.div
+                      className="absolute -bottom-4 -right-4 w-28 h-28 bg-gradient-to-br from-yellow-400/25 to-amber-500/35 rounded-full blur-xl"
+                      animate={{ 
+                        scale: [1, 1.1, 1],
+                        opacity: [0.3, 0.5, 0.3],
+                        rotate: [0, 90, 0]
+                      }}
+                      transition={{ 
+                        repeat: Infinity, 
+                        duration: 6, 
+                        ease: "easeInOut",
+                        delay: 2
+                      }}
+                    />
+
+                    {/* Icon */}
+                    <motion.div
+                      className="w-16 h-16 bg-gradient-to-br from-yellow-500 to-amber-600 rounded-2xl flex items-center justify-center mb-6 relative z-10"
+                      whileHover={{ rotate: 10 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    >
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                    </motion.div>
+
+                    <h3 className="text-2xl font-bold text-primary-900 mb-4 relative z-10">
+                      Zauważalne efekty
+                    </h3>
+                    
+                    <p className="text-primary-700 leading-relaxed relative z-10">
+                      Małe kroki, które robią dużą różnicę. Skupiam się na tym, co naprawdę Ci się przyda. Angielski staje się narzędziem, nie przeszkodą.
+                    </p>
+
+                    {/* Decorative elements */}
+                    <motion.div
+                      className="absolute top-6 right-6 w-6 h-6 border-2 border-emerald-400/50 rounded-full"
+                      animate={{ 
+                        scale: [1, 1.5, 1],
+                        borderColor: ["rgba(52, 211, 153, 0.5)", "rgba(34, 197, 94, 0.8)", "rgba(52, 211, 153, 0.5)"]
+                      }}
+                      transition={{ 
+                        repeat: Infinity, 
+                        duration: 4, 
+                        ease: "easeInOut" 
+                      }}
+                    />
+                  </CardBody>
+                </Card>
+              </motion.div>
+            </div>
+
+            {/* Bottom CTA */}
+            <motion.div
+              className="text-center"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <motion.div
+                className="max-w-2xl mx-auto mb-8"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1, duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <p className="text-xl text-primary-700 font-medium leading-relaxed">
+                  Widzisz siebie w takim podejściu? 
+                  <br />
+                  <span className="text-emerald-700 font-semibold">Zajrzyj do grafiku i wybierz termin.</span>
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 1.2, duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <Button
+                  as={motion.button}
+                  color="success"
+                  size="lg"
+                  radius="lg"
+                  className="bg-gradient-to-r from-emerald-600 to-green-600 text-white font-semibold px-10 py-6 text-lg shadow-xl"
+                  endContent={
+                    <motion.svg
+                      className="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      initial={{ x: 0 }}
+                      whileHover={{ x: 5 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </motion.svg>
+                  }
+                  whileHover={{ 
+                    scale: 1.05,
+                    boxShadow: "0 20px 40px -12px rgba(16, 185, 129, 0.4)"
+                  }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  Zobacz dostępne terminy
+                </Button>
+              </motion.div>
+
+              {/* Decorative floating elements around CTA */}
+              <motion.div
+                className="absolute -z-10"
+                animate={{ 
+                  rotate: 360,
+                  scale: [1, 1.2, 1]
+                }}
+                transition={{ 
+                  rotate: { repeat: Infinity, duration: 20, ease: "linear" },
+                  scale: { repeat: Infinity, duration: 8, ease: "easeInOut" }
+                }}
+              >
+                <div className="w-32 h-32 border border-emerald-300/30 rounded-full"></div>
+              </motion.div>
+           
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* CZWARTA SEKCJA - TO COŚ DLA CIEBIE JEŚLI */}
+      <section className="relative py-32 overflow-hidden">
+        {/* Animated background elements */}
+        <motion.div
+          className="absolute top-1/4 left-1/3 w-72 h-72 bg-gradient-to-r from-emerald-300/10 to-green-400/15 rounded-full blur-3xl"
+          animate={{ 
+            scale: [1, 1.4, 1], 
+            opacity: [0.1, 0.3, 0.1],
+            x: [0, 40, 0],
+            y: [0, -25, 0]
+          }}
+          transition={{ 
+            repeat: Infinity, 
+            duration: 15, 
+            ease: "easeInOut" 
+          }}
+        />
+        
+        <motion.div
+          className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-l from-primary to-emerald-300/12 rounded-full blur-3xl"
+          animate={{ 
+            scale: [1, 1.2, 1], 
+            opacity: [0.08, 0.25, 0.08],
+            x: [0, -50, 0],
+            y: [0, 30, 0]
+          }}
+          transition={{ 
+            repeat: Infinity, 
+            duration: 18, 
+            ease: "easeInOut",
+            delay: 5
+          }}
+        />
+
+        <div className="container mx-auto px-6 lg:px-8 relative z-10">
+          <div className="max-w-5xl mx-auto">
+            
+            {/* Header */}
+            <motion.div
+              className="text-center mb-16"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: true }}
+            >
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.2, duration: 0.6 }}
+                viewport={{ once: true }}
+                className="mb-6"
+              >
+            
+              </motion.div>
+
+              <motion.h2
+                className="text-4xl lg:text-5xl font-bold mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <span className="text-primary">To coś dla Ciebie,</span>
+                <br />
+                <span className="bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 bg-clip-text text-transparent">
+                  jeśli...
+                </span>
+              </motion.h2>
+            </motion.div>
+
+            {/* Cards Grid */}
+            <div className="grid lg:grid-cols-2 gap-8 mb-12">
+              {/* Card 1 */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <Card 
+                  className="h-full backdrop-blur-sm border-primary-200/40 shadow-lg hover:shadow-xl transition-all duration-300"
+                  as={motion.div}
+                  whileHover={{ 
+                    scale: 1.02,
+                    boxShadow: "0 20px 40px -12px rgba(59, 130, 246, 0.15)"
+                  }}
+                >
+                  <CardBody className="p-8 relative overflow-hidden">
+                    <motion.div
+                      className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-primary-400/20 to-emerald-400/25 rounded-full blur-xl"
+                      animate={{ 
+                        scale: [1, 1.3, 1],
+                        opacity: [0.3, 0.5, 0.3]
+                      }}
+                      transition={{ 
+                        repeat: Infinity, 
+                        duration: 6, 
+                        ease: "easeInOut" 
+                      }}
+                    />
+
+                    <div className="flex items-start gap-4 relative z-10">
+                      <motion.div
+                        className="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center flex-shrink-0 mt-1"
+                        whileHover={{ rotate: 5 }}
+                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                      >
+                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                      </motion.div>
+                      <div>
+                        <p className="text-primary-800 leading-relaxed text-lg">
+                          <span className="font-semibold">...próbowałaś/eś różnych sposobów, ale nic nie trafiało idealnie w Twoje potrzeby.</span> Tutaj stawiamy na indywidualność — nauka, która dostosowuje się do Ciebie, a nie Ty do niej.
+                        </p>
+                      </div>
+                    </div>
+                  </CardBody>
+                </Card>
+              </motion.div>
+
+              {/* Card 2 */}
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                viewport={{ once: true }}
+              >
+                <Card 
+                  className="h-full backdrop-blur-sm border-emerald-200/40 shadow-lg hover:shadow-xl transition-all duration-300"
+                  as={motion.div}
+                  whileHover={{ 
+                    scale: 1.02,
+                    boxShadow: "0 20px 40px -12px rgba(16, 185, 129, 0.15)"
+                  }}
+                >
+                  <CardBody className="p-8 relative overflow-hidden">
+                    <motion.div
+                      className="absolute -bottom-6 -left-6 w-28 h-28 bg-gradient-to-br from-emerald-400/20 to-green-400/25 rounded-full blur-xl"
+                      animate={{ 
+                        scale: [1, 1.2, 1],
+                        opacity: [0.25, 0.45, 0.25]
+                      }}
+                      transition={{ 
+                        repeat: Infinity, 
+                        duration: 7, 
+                        ease: "easeInOut",
+                        delay: 2
+                      }}
+                    />
+
+                    <div className="flex items-start gap-4 relative z-10">
+                      <motion.div
+                        className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-green-600 rounded-xl flex items-center justify-center flex-shrink-0 mt-1"
+                        whileHover={{ rotate: -5 }}
+                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                      >
+                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+                        </svg>
+                      </motion.div>
+                      <div>
+                        <p className="text-primary-800 leading-relaxed text-lg">
+                          <span className="font-semibold">...chcesz mówić z pewnością i swobodą — bez blokad i obaw.</span> Znajdziesz tu miejsce, gdzie Twój głos rozkwita, krok po kroku, w duchu pełnym troski.
+                        </p>
+                      </div>
+                    </div>
+                  </CardBody>
+                </Card>
+              </motion.div>
+
+              {/* Card 3 */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <Card 
+                  className="h-full backdrop-blur-sm border-yellow-200/40 shadow-lg hover:shadow-xl transition-all duration-300"
+                  as={motion.div}
+                  whileHover={{ 
+                    scale: 1.02,
+                    boxShadow: "0 20px 40px -12px rgba(245, 158, 11, 0.15)"
+                  }}
+                >
+                  <CardBody className="p-8 relative overflow-hidden">
+                    <motion.div
+                      className="absolute -top-4 -left-4 w-20 h-20 bg-gradient-to-br from-yellow-400/25 to-amber-400/30 rounded-full blur-xl"
+                      animate={{ 
+                        scale: [1, 1.4, 1],
+                        opacity: [0.2, 0.4, 0.2],
+                        rotate: [0, 180, 360]
+                      }}
+                      transition={{ 
+                        repeat: Infinity, 
+                        duration: 10, 
+                        ease: "easeInOut",
+                        delay: 1
+                      }}
+                    />
+
+                    <div className="flex items-start gap-4 relative z-10">
+                      <motion.div
+                        className="w-12 h-12 bg-gradient-to-br from-yellow-500 to-amber-600 rounded-xl flex items-center justify-center flex-shrink-0 mt-1"
+                        whileHover={{ rotate: 10 }}
+                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                      >
+                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                      </motion.div>
+                      <div>
+                        <p className="text-primary-800 leading-relaxed text-lg">
+                          <span className="font-semibold">...doceniasz efektywność i praktyczne rozwiązania.</span> Skupiamy się na efektach i stałym rozwoju, tak by Twój angielski rósł z każdym spotkaniem.
+                        </p>
+                      </div>
+                    </div>
+                  </CardBody>
+                </Card>
+              </motion.div>
+
+              {/* Card 4 */}
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <Card 
+                  className="h-full backdrop-blur-sm border-pink-200/40 shadow-lg hover:shadow-xl transition-all duration-300"
+                  as={motion.div}
+                  whileHover={{ 
+                    scale: 1.02,
+                    boxShadow: "0 20px 40px -12px rgba(236, 72, 153, 0.15)"
+                  }}
+                >
+                  <CardBody className="p-8 relative overflow-hidden">
+                    <motion.div
+                      className="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-br from-pink-400/20 to-rose-400/25 rounded-full blur-xl"
+                      animate={{ 
+                        scale: [1, 1.1, 1],
+                        opacity: [0.3, 0.5, 0.3]
+                      }}
+                      transition={{ 
+                        repeat: Infinity, 
+                        duration: 5, 
+                        ease: "easeInOut",
+                        delay: 3
+                      }}
+                    />
+
+                    <div className="flex items-start gap-4 relative z-10">
+                      <motion.div
+                        className="w-12 h-12 bg-gradient-to-br from-pink-500 to-rose-600 rounded-xl flex items-center justify-center flex-shrink-0 mt-1"
+                        whileHover={{ rotate: -10 }}
+                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                      >
+                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                      </motion.div>
+                      <div>
+                        <p className="text-primary-800 leading-relaxed text-lg">
+                          <span className="font-semibold">…szukasz nauczyciela, który naprawdę Cię słucha i rozumie.</span> Kogoś, kto wspiera Cię bez oceniania — bo Twoje postępy i komfort są najważniejsze.
+                        </p>
+                      </div>
+                    </div>
+                  </CardBody>
+                </Card>
+              </motion.div>
+
+              
+            </div>
+          </div>
+        </div>
+      </section>
+      <PricingTable />
+      {/* PIĄTA SEKCJA - CTA */}
+<SuccessStories />
+      <CallToActionContact />
+    </div>
   );
 }
