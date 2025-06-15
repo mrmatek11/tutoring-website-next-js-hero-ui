@@ -12,7 +12,6 @@ import { title, subtitle } from "@/components/primitives";
 import { useState, useEffect } from "react";
 import { Divider } from "@heroui/divider";
 import PricingTable from "@/components/PricingTable";
-import StudentSuccessCards from "@/components/StudentSuccessCards";
 import SuccessStories from "@/components/SuccessStories";
 import CallToActionContact from "@/components/CallToActionContact";
 import { SpeedInsights } from "@vercel/speed-insights/next";
