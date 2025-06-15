@@ -15,6 +15,8 @@ import PricingTable from "@/components/PricingTable";
 import StudentSuccessCards from "@/components/StudentSuccessCards";
 import SuccessStories from "@/components/SuccessStories";
 import CallToActionContact from "@/components/CallToActionContact";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 
 export default function LingGlowImproved() {
   const [mounted, setMounted] = useState(false);
