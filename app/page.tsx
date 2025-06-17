@@ -202,21 +202,7 @@ export default function LingGlowImproved() {
                 Zarezerwuj lekcję próbną
               </Button>
               
-              <Button
-                variant="bordered"
-                size="lg"
-                radius="lg"
-                className="border-2 border-emerald-300 text-emerald-700 font-semibold px-8 py-6 text-lg hover:bg-emerald-50 transition-colors"
-                startContent={
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1.01M15 10h1.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                }
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Dowiedz się więcej
-              </Button>
+
             </motion.div>
 
             {/* Enhanced Trust indicators */}
