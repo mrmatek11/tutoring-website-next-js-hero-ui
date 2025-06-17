@@ -15,6 +15,8 @@ import PricingTable from "@/components/PricingTable";
 import SuccessStories from "@/components/SuccessStories";
 import CallToActionContact from "@/components/CallToActionContact";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import CalendlyEmbed from '@/components/CalendlyEmbed'; // Dostosuj ścieżkę
+
 
 
 export default function LingGlowImproved() {
@@ -32,354 +34,322 @@ export default function LingGlowImproved() {
       <section className="relative pt-16 pb-24 overflow-hidden">
         {/* Floating background elements - zoptymalizowane */}
         <motion.div
-          className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-r from-emerald-200/20 to-green-300/20 rounded-full blur-3xl"
-          animate={{ 
-            scale: [1, 1.2, 1], 
-            opacity: [0.3, 0.5, 0.3],
-            x: [0, 30, 0],
-            y: [0, -20, 0]
-          }}
-          transition={{ 
-            repeat: Infinity, 
-            duration: 8, 
-            ease: "easeInOut" 
-          }}
-        />
-        
-        <motion.div
-          className="absolute bottom-32 right-16 w-96 h-96 bg-gradient-to-l from-blue-200/15 to-emerald-200/20 rounded-full blur-3xl"
-          animate={{ 
-            scale: [1, 1.1, 1], 
-            opacity: [0.2, 0.4, 0.2],
-            x: [0, -40, 0],
-            y: [0, 15, 0]
-          }}
-          transition={{ 
-            repeat: Infinity, 
-            duration: 10, 
-            ease: "easeInOut",
-            delay: 3
-          }}
-        />
+        className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-emerald-200/30 to-green-300/30 rounded-full blur-3xl"
+        animate={{ 
+          scale: [1, 1.3, 1], 
+          opacity: [0.2, 0.4, 0.2],
+          x: [0, 50, 0],
+          y: [0, -30, 0]
+        }}
+        transition={{ 
+          repeat: Infinity, 
+          duration: 12, 
+          ease: "easeInOut" 
+        }}
+      />
+      
+      <motion.div
+        className="absolute bottom-32 right-16 w-80 h-80 bg-gradient-to-l from-blue-200/20 to-emerald-200/25 rounded-full blur-3xl"
+        animate={{ 
+          scale: [1, 1.2, 1], 
+          opacity: [0.15, 0.35, 0.15],
+          x: [0, -60, 0],
+          y: [0, 25, 0]
+        }}
+        transition={{ 
+          repeat: Infinity, 
+          duration: 14, 
+          ease: "easeInOut",
+          delay: 4
+        }}
+      />
 
-        <motion.div
-          className="absolute top-1/3 right-1/4 w-32 h-32 bg-gradient-to-br from-yellow-200/25 to-amber-300/20 rounded-full blur-2xl"
-          animate={{ 
-            scale: [1, 1.3, 1], 
-            opacity: [0.25, 0.45, 0.25] 
-          }}
-          transition={{ 
-            repeat: Infinity, 
-            duration: 6, 
-            ease: "easeInOut",
-            delay: 1
-          }}
-        />
+      <motion.div
+        className="absolute top-1/4 right-1/3 w-40 h-40 bg-gradient-to-br from-yellow-200/30 to-amber-300/25 rounded-full blur-2xl"
+        animate={{ 
+          scale: [1, 1.4, 1], 
+          opacity: [0.2, 0.4, 0.2],
+          rotate: [0, 180, 360]
+        }}
+        transition={{ 
+          repeat: Infinity, 
+          duration: 8, 
+          ease: "easeInOut",
+          delay: 2
+        }}
+      />
 
-        <div className="container mx-auto px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
-            
-            {/* Left Column - Content */}
+      <div className="container mx-auto px-6 lg:px-8 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 xl:gap-16 items-start max-w-7xl mx-auto">
+          
+          {/* Left Column - Enhanced Content */}
+          <motion.div
+            className="text-center lg:text-left space-y-8 pt-8"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            {/* Enhanced Badge */}
             <motion.div
-              className="text-center lg:text-left space-y-8"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="inline-flex items-center"
             >
-              {/* Badge */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.2, duration: 0.6 }}
-                className="inline-flex items-center"
+              <Chip 
+                color="success" 
+                variant="flat" 
+                size="lg"
+                startContent={
+                  <motion.div 
+                    className="w-2 h-2 bg-emerald-500 rounded-full"
+                    animate={{ scale: [1, 1.2, 1] }}
+                    transition={{ repeat: Infinity, duration: 2 }}
+                  />
+                }
+                className="bg-gradient-to-r from-emerald-50 to-green-50 text-emerald-700 border border-emerald-200"
               >
-                <Chip 
-                  color="success" 
-                  variant="flat" 
-                  size="lg"
-                  startContent={
-                    <div className="w-2 h-2 bg-primary-700 rounded-full animate-pulse"></div>
-                  }
+                🌟 Linglow - Nauka z pasją
+              </Chip>
+            </motion.div>
+
+            {/* Enhanced Main Heading */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+            >
+              <h1 className={title({ size: "lg" })}>
+                <motion.span 
+                  className="text-primary block"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.6, duration: 0.6 }}
                 >
-                  Linglow - Nauka z pasją
-                </Chip>
-              </motion.div>
-
-              {/* Main Heading */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.8 }}
-              >
-                <h1 className={title({ size: "lg" })}>
-                  <span className="text-primary">Spokojnie.</span>
-                  <br />
-                  <span className="text-emerald-500">Twój angielski</span>
-                  <br />
-                  <span className="bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 bg-clip-text text-transparent">
-                    nabierze płynności.
-                  </span>
-                </h1>
-              </motion.div>
-
-              {/* Subtitle */}
-              <motion.p
-                className={subtitle({ class: "max-w-2xl" })}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6, duration: 0.8 }}
-              >
-                <span className="text-primary-700 font-medium">Indywidualne lekcje, które dostosowują się do Ciebie – bez presji, bez sztywnych reguł.</span> 
-                <br />
-                <span className="text-emerald-600 font-medium">Z nami nauczysz się angielskiego</span>
-                <br />
-                <span className="text-emerald-700 font-medium"> Skutecznie, z wyczuciem, w Twoim rytmie.</span>
-              </motion.p>
-
-              {/* CTA Button */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.8, duration: 0.8 }}
-                className="pt-4"
-              >
-                <Button
-                     as={motion.a}      
-  href="https://calendly.com/linglow/"
-                  target="_blank"
-                  rel="noreferrer"
-                  
-                  color="success"
-                  size="lg"
-                  radius="lg"
-                  className="bg-gradient-to-r from-emerald-600 to-green-600 text-white font-semibold px-8 py-6 text-lg shadow-lg"
-                  endContent={
-                    <motion.svg
-                      className="w-5 h-5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      initial={{ x: 0 }}
-                      whileHover={{ x: 5 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </motion.svg>
-                  }
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+                  Spokojnie.
+                </motion.span>
+                <motion.span 
+                  className="text-emerald-500 block"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.8, duration: 0.6 }}
                 >
-                  Zrób pierwszy krok
-                </Button>
-              </motion.div>
+                  Twój angielski
+                </motion.span>
+                <motion.span 
+                  className="bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 bg-clip-text text-transparent block"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 1, duration: 0.6 }}
+                >
+                  nabierze płynności.
+                </motion.span>
+              </h1>
+            </motion.div>
 
-              {/* Trust indicators */}
-              <motion.div
-                className="pt-8 space-y-4"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1, duration: 0.8 }}
+            {/* Enhanced Subtitle */}
+            <motion.div
+              className="space-y-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.8 }}
+            >
+              <p className={subtitle({ class: "max-w-2xl" })}>
+                <span className="text-primary-700 font-medium block mb-2">
+                  Indywidualne lekcje, które dostosowują się do Ciebie – bez presji, bez sztywnych reguł.
+                </span> 
+                <span className="text-emerald-600 font-medium block mb-1">
+                  Z nami nauczysz się angielskiego
+                </span>
+                <span className="text-emerald-700 font-medium">
+                  skutecznie, z wyczuciem, w Twoim rytmie.
+                </span>
+              </p>
+            </motion.div>
+
+            {/* Enhanced CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.8 }}
+              className="pt-4 flex flex-col sm:flex-row gap-4"
+            >
+              <Button
+                as={motion.a}      
+                href="https://calendly.com/linglow/"
+                target="_blank"
+                rel="noreferrer"
+                color="success"
+                size="lg"
+                radius="lg"
+                className="bg-gradient-to-r from-emerald-600 to-green-600 text-white font-semibold px-8 py-6 text-lg shadow-xl hover:shadow-2xl transition-shadow"
+                endContent={
+                  <motion.svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    initial={{ x: 0 }}
+                    whileHover={{ x: 5 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </motion.svg>
+                }
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.98 }}
               >
-                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6">
-                  <div className="flex items-center gap-3">
-                    <AvatarGroup max={4} size="sm">
-                      <Avatar src="https://i.pravatar.cc/150?u=1" />
-                      <Avatar src="https://i.pravatar.cc/150?u=2" />
-                      <Avatar src="https://i.pravatar.cc/150?u=3" />
-                      <Avatar src="https://i.pravatar.cc/150?u=4" />
-                    </AvatarGroup>
-                    <span className="text-sm text-gray-600">500+ zadowolonych uczniów</span>
-                  </div>
-                  
-                  <Chip color="warning" variant="flat" size="sm">
+                Zarezerwuj lekcję próbną
+              </Button>
+              
+              <Button
+                variant="bordered"
+                size="lg"
+                radius="lg"
+                className="border-2 border-emerald-300 text-emerald-700 font-semibold px-8 py-6 text-lg hover:bg-emerald-50 transition-colors"
+                startContent={
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1.01M15 10h1.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                }
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Dowiedz się więcej
+              </Button>
+            </motion.div>
+
+            {/* Enhanced Trust indicators */}
+            <motion.div
+              className="pt-8 space-y-6"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1, duration: 0.8 }}
+            >
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6">
+                <motion.div 
+                  className="flex items-center gap-3"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <AvatarGroup max={4} size="sm">
+                    <Avatar src="https://i.pravatar.cc/150?u=1" />
+                    <Avatar src="https://i.pravatar.cc/150?u=2" />
+                    <Avatar src="https://i.pravatar.cc/150?u=3" />
+                    <Avatar src="https://i.pravatar.cc/150?u=4" />
+                  </AvatarGroup>
+                  <span className="text-sm text-gray-600 font-medium">500+ zadowolonych uczniów</span>
+                </motion.div>
+                
+                <motion.div whileHover={{ scale: 1.05 }}>
+                  <Chip color="warning" variant="flat" size="sm" className="bg-yellow-50 border border-yellow-200">
                     <div className="flex items-center gap-1">
                       <div className="flex text-yellow-500">
                         {[1,2,3,4,5].map((i) => (
-                          <svg key={i} className="w-3 h-3 fill-current" viewBox="0 0 20 20">
+                          <motion.svg 
+                            key={i} 
+                            className="w-3 h-3 fill-current" 
+                            viewBox="0 0 20 20"
+                            initial={{ scale: 0 }}
+                            animate={{ scale: 1 }}
+                            transition={{ delay: 1.2 + i * 0.1, duration: 0.3 }}
+                          >
                             <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-                          </svg>
+                          </motion.svg>
                         ))}
                       </div>
-                      <span className="ml-1">5.0 średnia ocen</span>
+                      <span className="ml-1 font-medium">5.0 średnia ocen</span>
                     </div>
                   </Chip>
-                </div>
+                </motion.div>
+              </div>
 
-                <Card className="max-w-md">
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              >
+                <Card className="max-w-md bg-gradient-to-br from-emerald-50 to-green-50 border border-emerald-200">
                   <CardBody className="p-4">
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-sm font-medium text-emerald-900">Postęp uczniów</span>
-                      <Badge color="success" size="sm">95%</Badge>
+                      <span className="text-sm font-semibold text-emerald-900">Postęp uczniów</span>
+                      <Badge color="success" size="sm" className="bg-emerald-600">95%</Badge>
                     </div>
-                    <Progress 
-                      value={95} 
-                      color="success" 
-                      size="sm"
-                      className="mb-2"
-                    />
-                    <p className="text-xs text-gray-500">
+                    <motion.div
+                      initial={{ width: 0 }}
+                      animate={{ width: "100%" }}
+                      transition={{ delay: 1.5, duration: 1.5, ease: "easeOut" }}
+                    >
+                      <Progress 
+                        value={95} 
+                        color="success" 
+                        size="sm"
+                        className="mb-2"
+                      />
+                    </motion.div>
+                    <p className="text-xs text-emerald-700 font-medium">
                       95% uczniów osiąga swoje cele w ciągu 3 miesięcy
                     </p>
                   </CardBody>
                 </Card>
               </motion.div>
             </motion.div>
+          </motion.div>
 
-            {/* Right Column - Abstract Shapes Visual */}
-            <motion.div
-              className="relative mx-auto max-w-lg lg:max-w-xl"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
-            >
-              {/* Main container with abstract shapes */}
-              <div className="relative aspect-square">
-                {/* Central glowing circle */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-br from-emerald-400/30 to-green-500/40 rounded-full blur-2xl"
-                  animate={{ 
-                    scale: [1, 1.1, 1],
-                    opacity: [0.6, 0.8, 0.6]
-                  }}
-                  transition={{ 
-                    repeat: Infinity, 
-                    duration: 4, 
-                    ease: "easeInOut" 
-                  }}
-                />
-
-                {/* Abstract geometric shapes */}
-                <motion.div
-                  className="absolute inset-4 rounded-3xl overflow-hidden bg-gradient-to-br from-white/10 to-emerald-50/50 backdrop-blur-sm border border-emerald-200/30"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                >
-                  {/* Floating geometric elements */}
-                  <motion.div
-                    className="absolute top-8 left-8 w-16 h-16 bg-gradient-to-br from-emerald-400 to-green-500 rounded-2xl rotate-12"
-                    animate={{ 
-                      rotate: [12, 25, 12],
-                      y: [0, -10, 0]
-                    }}
-                    transition={{ 
-                      repeat: Infinity, 
-                      duration: 6, 
-                      ease: "easeInOut" 
-                    }}
-                  />
-                  
-                  <motion.div
-                    className="absolute top-1/2 right-8 w-12 h-12 bg-gradient-to-br from-blue-400 to-emerald-400 rounded-full"
-                    animate={{ 
-                      scale: [1, 1.2, 1],
-                      x: [0, -5, 0]
-                    }}
-                    transition={{ 
-                      repeat: Infinity, 
-                      duration: 4, 
-                      ease: "easeInOut",
-                      delay: 2
-                    }}
-                  />
-                  
-                  <motion.div
-                    className="absolute bottom-12 left-1/2 -translate-x-1/2 w-20 h-8 bg-gradient-to-r from-yellow-400 to-amber-500 rounded-full"
-                    animate={{ 
-                      rotate: [0, -10, 0],
-                      scale: [1, 1.1, 1]
-                    }}
-                    transition={{ 
-                      repeat: Infinity, 
-                      duration: 5, 
-                      ease: "easeInOut",
-                      delay: 1
-                    }}
-                  />
-
-                  {/* Central abstract pattern */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <motion.div
-                      className="relative"
-                      animate={{ rotate: 360 }}
-                      transition={{ 
-                        repeat: Infinity, 
-                        duration: 20, 
-                        ease: "linear" 
-                      }}
-                    >
-                      <div className="w-32 h-32 border-4 border-emerald-300/50 rounded-full"></div>
-                      <div className="absolute inset-4 border-2 border-green-400/30 rounded-full"></div>
-                      <div className="absolute inset-8 border border-emerald-500/20 rounded-full"></div>
-                    </motion.div>
-                  </div>
-                </motion.div>
-
-                {/* Floating elements around the main shape */}
-                <motion.div
-                  className="absolute -top-4 -right-4 z-20"
-                  animate={{ 
-                    y: [0, -15, 0],
-                    rotate: [0, 10, 0]
-                  }}
-                  transition={{ 
-                    repeat: Infinity, 
-                    duration: 4, 
-                    ease: "easeInOut" 
-                  }}
-                >
-                  <Badge content="NEW" color="primary">
-                    <Card className="w-16 h-16">
-                      <CardBody className="flex items-center justify-center p-2 bg-gradient-to-br from-blue-400 to-blue-500">
-                        <span className="text-white font-bold text-sm">EN</span>
-                      </CardBody>
-                    </Card>
-                  </Badge>
-                </motion.div>
-
-                <motion.div
-                  className="absolute -bottom-4 -left-8 z-20"
-                  animate={{ 
-                    y: [0, 10, 0],
-                    x: [0, 5, 0]
-                  }}
-                  transition={{ 
-                    repeat: Infinity, 
-                    duration: 6, 
-                    ease: "easeInOut",
-                    delay: 1
-                  }}
-                >
-                  <Card className="w-20 h-20">
-                    <CardBody className="flex items-center justify-center p-2 bg-gradient-to-br from-yellow-400 to-amber-500">
-                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                      </svg>
-                    </CardBody>
-                  </Card>
-                </motion.div>
-
-                <motion.div
-                  className="absolute top-1/3 -left-4 z-20"
-                  animate={{ 
-                    scale: [1, 1.2, 1],
-                    opacity: [0.8, 1, 0.8]
-                  }}
-                  transition={{ 
-                    repeat: Infinity, 
-                    duration: 3, 
-                    ease: "easeInOut",
-                    delay: 2
-                  }}
-                >
-                  <Chip color="success" size="lg">
-                    ✨
-                  </Chip>
-                </motion.div>
-              </div>
-            </motion.div>
-          </div>
+          {/* Right Column - Calendly Embed */}
+          <motion.div
+            className="relative"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
+          >
+            <div className="sticky top-24">
+              <CalendlyEmbed
+                url="https://calendly.com/linglow/"
+                title="Zarezerwuj swoją lekcję próbną"
+                description="Wybierz dogodny termin i rozpocznij swoją przygodę z angielskim już dziś!"
+                height={650}
+                prefill={{
+                  customAnswers: {
+                    "source": "landing-page-hero"
+                  }
+                }}
+              />
+            </div>
+          </motion.div>
         </div>
-      </section>
+      </div>
+
+      {/* Additional floating elements for visual appeal */}
+      <motion.div
+        className="absolute top-1/2 left-10 z-0"
+        animate={{ 
+          y: [0, -20, 0],
+          rotate: [0, 5, 0]
+        }}
+        transition={{ 
+          repeat: Infinity, 
+          duration: 6, 
+          ease: "easeInOut" 
+        }}
+      >
+        <div className="w-16 h-16 bg-gradient-to-br from-emerald-400/20 to-green-500/20 rounded-full blur-xl" />
+      </motion.div>
+
+      <motion.div
+        className="absolute bottom-1/4 right-20 z-0"
+        animate={{ 
+          y: [0, 15, 0],
+          x: [0, -10, 0]
+        }}
+        transition={{ 
+          repeat: Infinity, 
+          duration: 8, 
+          ease: "easeInOut",
+          delay: 3
+        }}
+      >
+        <div className="w-12 h-12 bg-gradient-to-br from-blue-400/20 to-emerald-400/20 rounded-full blur-lg" />
+      </motion.div>
+    </section>
 
       {/* Reszta sekcji pozostaje bez zmian... */}      <section className="relative py-24">
         <div className="container mx-auto px-6 lg:px-8">
