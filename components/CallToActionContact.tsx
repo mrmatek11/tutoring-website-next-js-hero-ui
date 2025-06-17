@@ -98,7 +98,11 @@ export default function ContactInfo() {
                 transition={{ duration: 0.6, delay: 1 }}
                 viewport={{ once: true }}
               >
-                <Button 
+                <Button
+                  as="a"
+  href="https://calendly.com/linglow/30min"
+                  target="_blank"
+                  rel="noreferrer"
                   color="primary" 
                   size="lg" 
                   radius="full"

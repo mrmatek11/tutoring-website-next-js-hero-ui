@@ -27,7 +27,8 @@ export default function PricingTable() {
       pricePerLesson: null,
       discount: null,
       popular: false,
-      buttonText: 'Wybierz Lekcję'
+      buttonText: 'Wybierz Lekcję',
+      calendlyLink: 'https://calendly.com/linglow/30min'
     },
     {
       id: 'package4',
@@ -38,7 +39,8 @@ export default function PricingTable() {
       pricePerLesson: '76,50 zł za lekcję',
       discount: 10,
       popular: true,
-      buttonText: 'Wybierz Pakiet'
+      buttonText: 'Wybierz Pakiet',
+      calendlyLink: 'https://calendly.com/linglow/pakiet5?back=1'
     },
     {
       id: 'package8',
@@ -49,7 +51,8 @@ export default function PricingTable() {
       pricePerLesson: '68 zł za lekcję',
       discount: 20,
       popular: false,
-      buttonText: 'Wybierz Pakiet'
+      buttonText: 'Wybierz Pakiet',
+      calendlyLink: 'https://calendly.com/linglow/pakiet8?back=1'
     }
   ];
 
@@ -198,6 +201,10 @@ export default function PricingTable() {
                         whileTap={{ scale: 0.98 }}
                       >
                         <Button
+                          as={motion.a}
+                          href={plan.calendlyLink}
+                          target="_blank"
+                          rel="noreferrer"
                           color={plan.popular ? "success" : "default"}
                           variant={plan.popular ? "solid" : "bordered"}
                           size="lg"

@@ -1,4 +1,4 @@
-export default function AboutLayout({
+export default function BookLayout({
   children,
 }: {
   children: React.ReactNode;

@@ -144,7 +144,11 @@ export default function LingGlowImproved() {
                 className="pt-4"
               >
                 <Button
-                  as={motion.button}
+                     as={motion.a}      
+  href="https://calendly.com/linglow/"
+                  target="_blank"
+                  rel="noreferrer"
+                  
                   color="success"
                   size="lg"
                   radius="lg"
@@ -446,12 +450,16 @@ Chcesz, żeby angielski wreszcie miał sens? Zrób pierwszy krok. Ja zajmę się
                     viewport={{ once: true }}
                   >
                     <Button
+                  as="a"
+  href="https://calendly.com/linglow/30min"
+                  target="_blank"
+                  rel="noreferrer"
                       color="primary"
                       variant="flat"
                       size="lg"
                       className="w-full"
                     >
-                      <p className="text-sm text-primary font-extrabold">Umów darmową konsultację</p>
+                      <p className="text-sm text-primary font-extrabold">Umów konsultację</p>
                     </Button>
                   </motion.div>
                 </CardBody>
@@ -922,7 +930,11 @@ Chcesz, żeby angielski wreszcie miał sens? Zrób pierwszy krok. Ja zajmę się
                 viewport={{ once: true }}
               >
                 <Button
-                  as={motion.button}
+                  as={motion.a}
+                               
+  href="https://calendly.com/linglow/30min"
+                  target="_blank"
+                  rel="noreferrer"
                   color="success"
                   size="lg"
                   radius="lg"

@@ -79,7 +79,7 @@ export const Navbar = () => {
           <Button
             as={Link}
             className="text-sm font-semibold text-white bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 shadow-lg hover:shadow-emerald-500/25 transition-all duration-300 px-6"
-            href="#"
+            href="https://calendly.com/linglow/"
             variant="solid"
             radius="full"
           >
@@ -97,36 +97,13 @@ export const Navbar = () => {
         <div className="mx-4 mt-6 flex flex-col gap-4">
           <NavbarMenuItem>
             <NextLink 
-              href="/o-nas" 
+              href="/book" 
               className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors duration-200"
             >
-              O nas
+              Sprawdź dostępność
             </NextLink>
           </NavbarMenuItem>
-          <NavbarMenuItem>
-            <NextLink 
-              href="/kursy" 
-              className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors duration-200"
-            >
-              Kursy
-            </NextLink>
-          </NavbarMenuItem>
-          <NavbarMenuItem>
-            <NextLink 
-              href="/blog" 
-              className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors duration-200"
-            >
-              Blog
-            </NextLink>
-          </NavbarMenuItem>
-          <NavbarMenuItem>
-            <NextLink 
-              href="/kontakt" 
-              className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors duration-200"
-            >
-              Kontakt
-            </NextLink>
-          </NavbarMenuItem>
+          
           <NavbarMenuItem className="mt-4">
             <Button
               as={Link}
