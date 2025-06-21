@@ -35,39 +35,16 @@ export default function LingGlowImproved() {
         {/* Floating background elements - zoptymalizowane */}
 
 
-      <div className="container mx-auto px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 xl:gap-16 items-start max-w-7xl mx-auto">
-          
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+<div className="grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-start max-w-7xl mx-auto w-full">          
           {/* Left Column - Enhanced Content */}
           <motion.div
-            className="text-center lg:text-left space-y-8 pt-8"
+  className="text-center lg:text-left space-y-6 lg:space-y-8 pt-4 lg:pt-8 w-full"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            {/* Enhanced Badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-              className="inline-flex items-center"
-            >
-              <Chip 
-                color="success" 
-                variant="flat" 
-                size="lg"
-                startContent={
-                  <motion.div 
-                    className="w-2 h-2 bg-emerald-500 rounded-full"
-                    animate={{ scale: [1, 1.2, 1] }}
-                    transition={{ repeat: Infinity, duration: 2 }}
-                  />
-                }
-                className="bg-gradient-to-r from-emerald-50 to-green-50 text-emerald-700 border border-emerald-200"
-              >
-                🌟 Linglow - Nauka z pasją
-              </Chip>
-            </motion.div>
+     
 
             {/* Enhanced Main Heading */}
             <motion.div
@@ -238,12 +215,12 @@ export default function LingGlowImproved() {
 
           {/* Right Column - Calendly Embed */}
           <motion.div
-            className="relative"
+            className="relative w-full overflow-hidden"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
           >
-            <div className="sticky top-24">
+            <div className="sticky top-24 w-full max-w-full">
               <CalendlyEmbed
                 url="https://calendly.com/linglow/"
                 title="Zarezerwuj swoją lekcję próbną"
