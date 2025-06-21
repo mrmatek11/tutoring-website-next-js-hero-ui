@@ -243,9 +243,9 @@ export default function LingGlowImproved() {
       
     </section>
 
-      {/* Reszta sekcji pozostaje bez zmian... */}      <section className="relative py-24">
-        <div className="container mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
+      {/* Reszta sekcji pozostaje bez zmian... */}      <section className="relative py-16 lg:py-24">
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center max-w-6xl mx-auto">
             
             {/* Left Column - Content Container */}
             <motion.div
@@ -255,8 +255,8 @@ export default function LingGlowImproved() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              <Card className="bg-white-100/70 backdrop-blur border-emerald-200/50 shadow-xl">
-                <CardBody className="p-8">
+              <Card className="bg-white/70 backdrop-blur border-emerald-200/50 shadow-xl">
+  <CardBody className="p-8">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
