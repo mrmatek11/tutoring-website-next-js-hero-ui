@@ -33,51 +33,7 @@ export default function LingGlowImproved() {
       {/* HERO SECTION - Zmniejszona wysokość, usunięte centrowanie w pionie */}
       <section className="relative pt-16 pb-24 overflow-hidden">
         {/* Floating background elements - zoptymalizowane */}
-        <motion.div
-        className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-emerald-200/30 to-green-300/30 rounded-full blur-3xl"
-        animate={{ 
-          scale: [1, 1.3, 1], 
-          opacity: [0.2, 0.4, 0.2],
-          x: [0, 50, 0],
-          y: [0, -30, 0]
-        }}
-        transition={{ 
-          repeat: Infinity, 
-          duration: 12, 
-          ease: "easeInOut" 
-        }}
-      />
-      
-      <motion.div
-        className="absolute bottom-32 right-16 w-80 h-80 bg-gradient-to-l from-blue-200/20 to-emerald-200/25 rounded-full blur-3xl"
-        animate={{ 
-          scale: [1, 1.2, 1], 
-          opacity: [0.15, 0.35, 0.15],
-          x: [0, -60, 0],
-          y: [0, 25, 0]
-        }}
-        transition={{ 
-          repeat: Infinity, 
-          duration: 14, 
-          ease: "easeInOut",
-          delay: 4
-        }}
-      />
 
-      <motion.div
-        className="absolute top-1/4 right-1/3 w-40 h-40 bg-gradient-to-br from-yellow-200/30 to-amber-300/25 rounded-full blur-2xl"
-        animate={{ 
-          scale: [1, 1.4, 1], 
-          opacity: [0.2, 0.4, 0.2],
-          rotate: [0, 180, 360]
-        }}
-        transition={{ 
-          repeat: Infinity, 
-          duration: 8, 
-          ease: "easeInOut",
-          delay: 2
-        }}
-      />
 
       <div className="container mx-auto px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 xl:gap-16 items-start max-w-7xl mx-auto">
@@ -305,36 +261,9 @@ export default function LingGlowImproved() {
       </div>
 
       {/* Additional floating elements for visual appeal */}
-      <motion.div
-        className="absolute top-1/2 left-10 z-0"
-        animate={{ 
-          y: [0, -20, 0],
-          rotate: [0, 5, 0]
-        }}
-        transition={{ 
-          repeat: Infinity, 
-          duration: 6, 
-          ease: "easeInOut" 
-        }}
-      >
-        <div className="w-16 h-16 bg-gradient-to-br from-emerald-400/20 to-green-500/20 rounded-full blur-xl" />
-      </motion.div>
+     
 
-      <motion.div
-        className="absolute bottom-1/4 right-20 z-0"
-        animate={{ 
-          y: [0, 15, 0],
-          x: [0, -10, 0]
-        }}
-        transition={{ 
-          repeat: Infinity, 
-          duration: 8, 
-          ease: "easeInOut",
-          delay: 3
-        }}
-      >
-        <div className="w-12 h-12 bg-gradient-to-br from-blue-400/20 to-emerald-400/20 rounded-full blur-lg" />
-      </motion.div>
+      
     </section>
 
       {/* Reszta sekcji pozostaje bez zmian... */}      <section className="relative py-24">
@@ -349,7 +278,7 @@ export default function LingGlowImproved() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              <Card className="bg-white/70 backdrop-blur border-emerald-200/50 shadow-xl">
+              <Card className="bg-white-100/70 backdrop-blur border-emerald-200/50 shadow-xl">
                 <CardBody className="p-8">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -360,10 +289,10 @@ export default function LingGlowImproved() {
                     <Chip color="primary" variant="flat" className="mb-4">
                       O mnie
                     </Chip>
-                    <h1 className="text-3xl font-bold text-primary-300 mb-6">
+                    <h1 className="text-3xl font-bold text-white-300 mb-6">
 O mnie — ale dla Ciebie                    </h1>
                      
-                    <div className="space-y-4 text-primary-300">
+                    <div className="space-y-4 text-white-300">
                                             <p className="leading-relaxed font-bold ">
 
                                             Angielski bez stresu, za to z celem.
@@ -388,13 +317,13 @@ Chcesz, żeby angielski wreszcie miał sens? Zrób pierwszy krok. Ja zajmę się
                     transition={{ delay: 0.4, duration: 0.6 }}
                     viewport={{ once: true }}
                   >
-                    <div className="text-center p-4 bg-primary-300 rounded-lg">
-                      <div className="text-2xl font-bold text-primary-600">500+</div>
-                      <div className="text-sm text-primary-700">Uczniów</div>
+                    <div className="text-center p-4 bg-primary-100 rounded-lg">
+                      <div className="text-2xl font-bold text-white-300">500+</div>
+                      <div className="text-sm text-white-300">Uczniów</div>
                     </div>
-                    <div className="text-center p-4 bg-primary-300 rounded-lg">
-                      <div className="text-2xl font-bold text-primary-600">5+</div>
-                      <div className="text-sm text-primary-700">Lat doświadczenia</div>
+                    <div className="text-center p-4 bg-primary-100 rounded-lg">
+                      <div className="text-2xl font-bold text-white-300">5+</div>
+                      <div className="text-sm text-white-300">Lat doświadczenia</div>
                     </div>
                   </motion.div>
 
@@ -415,7 +344,7 @@ Chcesz, żeby angielski wreszcie miał sens? Zrób pierwszy krok. Ja zajmę się
                       size="lg"
                       className="w-full"
                     >
-                      <p className="text-sm text-primary font-extrabold">Umów konsultację</p>
+                      <p className="text-big text-primary-900 font-bold">Umów konsultację</p>
                     </Button>
                   </motion.div>
                 </CardBody>
@@ -524,51 +453,7 @@ Chcesz, żeby angielski wreszcie miał sens? Zrób pierwszy krok. Ja zajmę się
       {/* TRZECIA SEKCJA - JAK MOGĘ CI POMÓC */}
       <section className="relative py-32 overflow-hidden">
         {/* Animated background elements */}
-        <motion.div
-          className="absolute top-0 left-1/4 w-80 h-80 bg-gradient-to-r from-emerald-300/15 to-green-400/20 rounded-full blur-3xl"
-          animate={{ 
-            scale: [1, 1.3, 1], 
-            opacity: [0.2, 0.4, 0.2],
-            x: [0, 50, 0],
-            y: [0, -30, 0]
-          }}
-          transition={{ 
-            repeat: Infinity, 
-            duration: 12, 
-            ease: "easeInOut" 
-          }}
-        />
-        
-        <motion.div
-          className="absolute bottom-20 right-1/4 w-96 h-96 bg-gradient-to-l from-emerald-200/10 to-green-300/15 rounded-full blur-3xl"
-          animate={{ 
-            scale: [1, 1.2, 1], 
-            opacity: [0.15, 0.35, 0.15],
-            x: [0, -60, 0],
-            y: [0, 20, 0]
-          }}
-          transition={{ 
-            repeat: Infinity, 
-            duration: 14, 
-            ease: "easeInOut",
-            delay: 4
-          }}
-        />
-
-        <motion.div
-          className="absolute top-1/2 left-10 w-40 h-40 bg-gradient-to-br from-yellow-300/20 to-amber-400/25 rounded-full blur-2xl"
-          animate={{ 
-            scale: [1, 1.4, 1], 
-            opacity: [0.2, 0.4, 0.2],
-            rotate: [0, 180, 360]
-          }}
-          transition={{ 
-            repeat: Infinity, 
-            duration: 10, 
-            ease: "easeInOut",
-            delay: 2
-          }}
-        />
+       
 
         {/* Floating geometric shapes */}
         <motion.div
@@ -706,7 +591,7 @@ Chcesz, żeby angielski wreszcie miał sens? Zrób pierwszy krok. Ja zajmę się
                       Indywidualnie
                     </h3>
                     
-                    <p className="text-primary-700 leading-relaxed relative z-10">
+                    <p className="text-primary-300 leading-relaxed relative z-10">
                       Każda lekcja powstaje z myślą o Tobie. Dostosowuję materiał, styl pracy i tempo do Twoich potrzeb — żadnych gotowców ani przypadkowych tematów.
                     </p>
 
@@ -766,7 +651,7 @@ Chcesz, żeby angielski wreszcie miał sens? Zrób pierwszy krok. Ja zajmę się
                       Bez stresu i presji
                     </h3>
                     
-                    <p className="text-primary-700 leading-relaxed relative z-10">
+                    <p className="text-primary-300 leading-relaxed relative z-10">
                       Tu nie ma ocen, rywalizacji ani sztywnej atmosfery. Budujemy przestrzeń, w której możesz uczyć się na spokojnie — po swojemu, we własnym rytmie.
                     </p>
 
@@ -835,7 +720,7 @@ Chcesz, żeby angielski wreszcie miał sens? Zrób pierwszy krok. Ja zajmę się
                       Zauważalne efekty
                     </h3>
                     
-                    <p className="text-primary-700 leading-relaxed relative z-10">
+                    <p className="text-primary-300 leading-relaxed relative z-10">
                       Małe kroki, które robią dużą różnicę. Skupiam się na tym, co naprawdę Ci się przyda. Angielski staje się narzędziem, nie przeszkodą.
                     </p>
 
