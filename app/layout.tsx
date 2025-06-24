@@ -15,10 +15,10 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 // Ulepszone SEO metadata
 export const metadata: Metadata = {
   title: {
-    default: "Linglow Academy - Nauka Angielskiego Online | Indywidualne Lekcje",
+    default: "Linglow Academy - Indywidualne Lekcje Angielskiego",
     template: `%s | Linglow Academy - Nauka Angielskiego`,
   },
-  description: "Naucz się angielskiego skutecznie z Linglow Academy. Indywidualne lekcje online dostosowane do Twoich potrzeb. Bez stresu, z pasją i widocznymi efektami. Zarezerwuj lekcję próbną już dziś!",
+  description: "Indywidualne lekcje online dostosowane do Twoich potrzeb. Bez stresu, z pasją i widocznymi efektami.",
   keywords: [
     "nauka angielskiego online",
     "lekcje angielskiego",
@@ -49,8 +49,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'pl_PL',
     url: 'https://linglow.pl',
-    title: 'Linglow Academy - Nauka Angielskiego Online | Indywidualne Lekcje',
-    description: 'Naucz się angielskiego skutecznie z Linglow Academy. Indywidualne lekcje online dostosowane do Twoich potrzeb. Bez stresu, z pasją i widocznymi efektami.',
+    title: 'Linglow Academy - Indywidualne Lekcje Angielskiego',
+    description: 'Naucz się angielskiego skutecznie z Linglow Academy. Indywidualne lekcje online dostosowane do Twoich potrzeb.',
     siteName: 'Linglow Academy',
     images: [
       {
