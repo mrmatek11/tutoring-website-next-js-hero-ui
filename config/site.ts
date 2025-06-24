@@ -1,7 +1,7 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Linglow.pl",
+  name: "Linglow.pl - Indywidualne lekcje angielskiego online",
   description: "Indywidualne lekcje angielskiego online — skuteczna nauka mówienia i pewność siebie w przyjaznej atmosferze.",
   navItems: [
     {
