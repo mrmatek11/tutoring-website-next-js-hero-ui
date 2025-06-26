@@ -255,7 +255,7 @@ export default function LingGlowImproved() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              <Card className="bg-white/70 backdrop-blur border-emerald-200/50 shadow-xl">
+              <Card className="backdrop-blur border-emerald-200/50 shadow-xl">
   <CardBody className="p-8">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
