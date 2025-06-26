@@ -1,0 +1,21 @@
+{
+  "name": "Linglow Academy - Lekcje Angielskiego Online",
+  "short_name": "Linglow",
+  "description": "Indywidualne lekcje angielskiego online",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#10b981",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

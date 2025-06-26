@@ -9,7 +9,7 @@ const StructuredData = () => {
     "name": "Linglow Academy",
     "alternateName": "Linglow",
     "url": "https://linglow.pl",
-    "logo": "https://linglow.pl/logo.png",
+    "logo": "https://linglow.pl/logolinglow.svg",
     "description": "Linglow Academy oferuje indywidualne lekcje angielskiego online dostosowane do potrzeb każdego ucznia. Nauka bez stresu, z pasją i widocznymi efektami.",
     "address": {
       "@type": "PostalAddress",

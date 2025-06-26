@@ -3,6 +3,7 @@ import { Metadata, Viewport } from "next";
 import { Link } from "@heroui/link";
 import clsx from "clsx";
 import React from "react";
+import StructuredData from "@/components/StructuredData";
 
 import { Providers } from "./providers";
 import { siteConfig } from "@/config/site";
@@ -128,6 +129,8 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning lang="pl">
       <head />
+              <StructuredData />
+
       <body
         className={clsx(
           "min-h-screen text-foreground bg-background font-sans antialiased",
