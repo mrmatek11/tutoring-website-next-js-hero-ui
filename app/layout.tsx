@@ -56,8 +56,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
+        width: 682,
+        height: 453,
         alt: 'Linglow Academy - Nauka Angielskiego Online',
       },
     ],
