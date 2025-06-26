@@ -564,7 +564,7 @@ Chcesz, żeby angielski wreszcie miał sens? Zrób pierwszy krok. Ja zajmę się
                       </svg>
                     </motion.div>
 
-                    <h3 className="text-2xl font-bold text-primary-900 mb-4 relative z-10">
+                    <h3 className="text-2xl font-bold text-black mb-4 relative z-10">
                       Indywidualnie
                     </h3>
                     
@@ -624,7 +624,7 @@ Chcesz, żeby angielski wreszcie miał sens? Zrób pierwszy krok. Ja zajmę się
                       </svg>
                     </motion.div>
 
-                    <h3 className="text-2xl font-bold text-primary-900 mb-4 relative z-10">
+                    <h3 className="text-2xl font-bold text-black mb-4 relative z-10">
                       Bez stresu i presji
                     </h3>
                     
@@ -693,7 +693,7 @@ Chcesz, żeby angielski wreszcie miał sens? Zrób pierwszy krok. Ja zajmę się
                       </svg>
                     </motion.div>
 
-                    <h3 className="text-2xl font-bold text-primary-900 mb-4 relative z-10">
+                    <h3 className="text-2xl font-bold text-black mb-4 relative z-10">
                       Zauważalne efekty
                     </h3>
                     

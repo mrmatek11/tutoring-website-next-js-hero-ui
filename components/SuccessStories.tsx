@@ -49,14 +49,12 @@ export default function SuccessStories() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-
-          
           <h2 className={title({ size: "lg" })}>
-            <span className="bg-gradient-to-r from-emerald-500 via-green-600 to-emerald-700 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-emerald-400 via-emerald-500 to-emerald-600 dark:from-emerald-300 dark:via-emerald-400 dark:to-emerald-500 bg-clip-text text-transparent">
               Historie sukcesu i realne rezultaty
             </span>
           </h2>
-          <p className="mt-4 text-default-600 max-w-2xl mx-auto">
+          <p className="mt-4 text-default-600 dark:text-default-400 max-w-2xl mx-auto">
             Zobacz, jak nasze lekcje pomagają uczniom osiągać cele językowe i budować pewność siebie.
           </p>
         </motion.div>
@@ -72,8 +70,10 @@ export default function SuccessStories() {
               viewport={{ once: true }}
             >
               <Card 
-                className="h-full backdrop-blur-sm border border-emerald-100/50 bg-gradient-to-br from-white/80 to-emerald-50/60 
-                         shadow-lg hover:shadow-emerald-600/20 transition-all duration-300"
+                className="h-full bg-gradient-to-br from-emerald-50/90 to-emerald-100/70 dark:from-emerald-950/60 dark:to-emerald-900/70 
+                         backdrop-blur-sm border border-emerald-200/50 dark:border-emerald-700/50
+                         shadow-lg hover:shadow-xl hover:shadow-emerald-500/20 dark:hover:shadow-emerald-400/20 
+                         transition-all duration-300 overflow-hidden"
                 as={motion.div}
                 whileHover={{ 
                   scale: 1.03,
@@ -81,24 +81,40 @@ export default function SuccessStories() {
                 }}
               >
                 <CardBody className="p-8 relative overflow-hidden">
-                  {/* Floating glow effect */}
+                  {/* Floating glow effects */}
                   <motion.div
-                    className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-emerald-400/30 to-green-500/40 rounded-full blur-xl"
+                    className="absolute -top-4 -right-4 w-16 h-16 bg-emerald-300/20 dark:bg-emerald-500/20 rounded-xl blur-xl"
                     animate={{ 
-                      scale: [1, 1.3, 1],
-                      opacity: [0.3, 0.6, 0.3]
+                      scale: [1, 1.2, 1], 
+                      opacity: [0.3, 0.5, 0.3],
+                      rotate: [0, 5, 0]
                     }}
                     transition={{ 
                       repeat: Infinity, 
-                      duration: 4, 
+                      duration: 8, 
                       ease: "easeInOut",
                       delay: index * 1.5
                     }}
                   />
                   
+                  <motion.div
+                    className="absolute bottom-4 left-4 w-12 h-12 bg-emerald-400/20 dark:bg-emerald-600/20 rounded-full blur-xl"
+                    animate={{ 
+                      scale: [1, 1.3, 1], 
+                      opacity: [0.2, 0.4, 0.2] 
+                    }}
+                    transition={{ 
+                      repeat: Infinity, 
+                      duration: 10, 
+                      ease: "easeInOut", 
+                      delay: index * 2 
+                    }}
+                  />
+                  
                   <div className="flex flex-col items-center text-center relative z-10">
                     <motion.div
-                      className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-green-600 rounded-2xl flex items-center justify-center mb-6"
+                      className="w-16 h-16 bg-gradient-to-br from-emerald-400 to-emerald-500 dark:from-emerald-500 dark:to-emerald-600 
+                               rounded-2xl flex items-center justify-center mb-6 shadow-lg dark:shadow-emerald-500/25"
                       whileHover={{ rotate: 5 }}
                       transition={{ type: "spring", stiffness: 300, damping: 30 }}
                     >
@@ -107,25 +123,17 @@ export default function SuccessStories() {
                       </div>
                     </motion.div>
                     
-                    <div className="text-5xl font-extrabold bg-gradient-to-r from-emerald-600 to-green-700 bg-clip-text text-transparent mb-4">
+                    <div className="text-5xl font-extrabold bg-gradient-to-r from-emerald-600 to-emerald-700 dark:from-emerald-400 dark:to-emerald-500 bg-clip-text text-transparent mb-4">
                       {stat.value}
                     </div>
                     
-                    <h3 className="text-xl font-semibold text-primary-900 mb-3">
+                    <h3 className="text-xl font-semibold text-emerald-800 dark:text-emerald-200 mb-3">
                       {stat.label}
                     </h3>
                     
-                    <p className="text-primary-700 text-sm">
+                    <p className="text-emerald-700 dark:text-emerald-300 text-sm">
                       {stat.description}
                     </p>
-                    
-                    {/* Decorative elements */}
-                    <motion.div
-                      className="absolute bottom-4 right-4 w-12 h-12 border-2 border-emerald-300/40 rounded-lg"
-                      animate={{ rotate: [0, 180, 360] }}
-                      transition={{ repeat: Infinity, duration: 12, ease: "linear" }}
-                      style={{ opacity: 0.2 }}
-                    />
                   </div>
                 </CardBody>
               </Card>
@@ -142,38 +150,20 @@ export default function SuccessStories() {
           viewport={{ once: true }}
         >
           <Card 
-            className="backdrop-blur-md bg-gradient-to-br from-white/60 to-emerald-50/40 border border-emerald-100/50 
-                     shadow-lg hover:shadow-xl transition-all duration-500"
+            className="bg-gradient-to-br from-emerald-50/90 to-emerald-100/70 dark:from-emerald-950/60 dark:to-emerald-900/70 
+                     backdrop-blur-sm border border-emerald-200/50 dark:border-emerald-700/50
+                     shadow-lg hover:shadow-xl hover:shadow-emerald-500/20 dark:hover:shadow-emerald-400/10 
+                     transition-all duration-500 overflow-hidden"
             as={motion.div}
-            whileHover={{ scale: 1.02 }}
+            whileHover={{
+              scale: 1.01,
+              boxShadow: "0 25px 50px -12px rgba(16, 185, 129, 0.25)",
+            }}
           >
-            <CardBody className="p-8 sm:p-10 relative overflow-hidden">
-              {/* Quote mark decoration */}
-              <div className="absolute top-6 left-8 text-8xl text-emerald-200/60 font-serif leading-none">
-                "
-              </div>
-              
-              <div className="relative z-10">
-                <p className="text-lg sm:text-xl text-primary-800 italic leading-relaxed mb-6 pl-6">
-                  Dzięki indywidualnemu podejściu i atmosferze, którą tworzy Lidia, przełamałam swoją barierę językową. 
-                  Po trzech miesiącach regularnych zajęć czuję się pewniej w codziennych rozmowach po angielsku, 
-                  a mój szef zauważył postęp w komunikacji z klientami.
-                </p>
-                
-                <div className="flex items-center pl-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                    A
-                  </div>
-                  <div className="ml-4">
-                    <p className="font-semibold text-primary-900">Anna K.</p>
-                    <p className="text-sm text-primary-600">Specjalistka ds. obsługi klienta</p>
-                  </div>
-                </div>
-              </div>
-              
+            <CardBody className="p-8 sm:p-10 relative">
               {/* Floating elements */}
               <motion.div
-                className="absolute bottom-10 right-10 w-16 h-16 bg-emerald-300/20 rounded-xl blur-xl"
+                className="absolute top-10 left-10 w-16 h-16 bg-emerald-300/20 dark:bg-emerald-600/20 rounded-xl blur-xl"
                 animate={{ 
                   scale: [1, 1.2, 1], 
                   opacity: [0.3, 0.5, 0.3],
@@ -181,6 +171,91 @@ export default function SuccessStories() {
                 }}
                 transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }}
               />
+              
+              <motion.div
+                className="absolute bottom-20 right-20 w-20 h-20 bg-emerald-400/20 dark:bg-emerald-500/20 rounded-full blur-xl"
+                animate={{ 
+                  scale: [1, 1.3, 1], 
+                  opacity: [0.2, 0.4, 0.2] 
+                }}
+                transition={{ repeat: Infinity, duration: 10, ease: "easeInOut", delay: 1 }}
+              />
+              
+              <motion.div
+                className="absolute top-40 right-40 w-12 h-12 bg-emerald-500/20 dark:bg-emerald-400/20 rounded-lg blur-lg rotate-12"
+                animate={{ 
+                  scale: [1, 1.2, 1], 
+                  opacity: [0.2, 0.4, 0.2],
+                  rotate: [12, 20, 12]
+                }}
+                transition={{ repeat: Infinity, duration: 7, ease: "easeInOut", delay: 2 }}
+              />
+              
+              {/* Quote mark decoration */}
+              <div className="absolute top-6 left-8 text-8xl text-emerald-200/60 dark:text-emerald-700/40 font-serif leading-none">
+                "
+              </div>
+              
+              <div className="relative z-10">
+                <p className="text-lg sm:text-xl text-emerald-800 dark:text-emerald-200 italic leading-relaxed mb-6 pl-6">
+                  Dzięki indywidualnemu podejściu i atmosferze, którą tworzy Lidia, przełamałam swoją barierę językową. 
+                  Po trzech miesiącach regularnych zajęć czuję się pewniej w codziennych rozmowach po angielsku, 
+                  a mój szef zauważył postęp w komunikacji z klientami.
+                </p>
+                
+                <div className="flex items-center pl-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-emerald-400 to-emerald-500 dark:from-emerald-500 dark:to-emerald-600 
+                                rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg dark:shadow-emerald-500/25">
+                    A
+                  </div>
+                  <div className="ml-4">
+                    <p className="font-semibold text-emerald-800 dark:text-emerald-200">Anna K.</p>
+                    <p className="text-sm text-emerald-700 dark:text-emerald-300">Specjalistka ds. obsługi klienta</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Small glowing elements */}
+              <div className="relative mt-8 h-20">
+                <motion.div
+                  className="absolute bottom-2 left-2 w-3 h-3 bg-emerald-400 dark:bg-emerald-500 rounded-full"
+                  animate={{
+                    scale: [1, 1.3, 1],
+                    opacity: [0.7, 1, 0.7],
+                  }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 2,
+                    ease: "easeInOut",
+                  }}
+                />
+                <motion.div
+                  className="absolute bottom-10 left-10 w-2 h-2 bg-emerald-500 dark:bg-emerald-400 rounded-full"
+                  animate={{
+                    scale: [1, 1.5, 1],
+                    opacity: [0.6, 1, 0.6],
+                  }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 3,
+                    ease: "easeInOut",
+                    delay: 0.5
+                  }}
+                />
+                <motion.div
+                  className="absolute bottom-6 left-20 w-4 h-4 bg-emerald-300 dark:bg-emerald-600 rounded-full"
+                  animate={{
+                    scale: [1, 1.2, 1],
+                    opacity: [0.5, 0.8, 0.5],
+                  }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 4,
+                    ease: "easeInOut",
+                    delay: 1
+                  }}
+                />
+              </div>
             </CardBody>
           </Card>
         </motion.div>
