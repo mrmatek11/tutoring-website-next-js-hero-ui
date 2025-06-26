@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     siteName: 'Linglow Academy',
     images: [
       {
-        url: '/og-image2.jpg',
+        url: '/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Linglow Academy - Nauka Angielskiego Online',
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Linglow Academy - Nauka Angielskiego Online',
     description: 'Indywidualne lekcje angielskiego online. Bez stresu, z pasją i widocznymi efektami.',
-    images: ['/og-image2.jpg'],
+    images: ['/og-image.jpg'],
   },
   alternates: {
     canonical: 'https://linglow.pl',
