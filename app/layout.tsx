@@ -134,7 +134,7 @@ export default function RootLayout({
           fontSans.variable,
         )}
       >
-        <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+        <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
           <div className="relative flex flex-col min-h-screen">
             {/* Kontener dla animacji tła - rozciąga się na całą wysokość */}
             <div className="absolute inset-0 w-full min-h-full z-0">
