@@ -243,119 +243,190 @@ export default function LingGlowImproved() {
       
     </section>
 
-      {/* Reszta sekcji pozostaje bez zmian... */}      <section className="relative py-16 lg:py-24">
-  <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center max-w-6xl mx-auto">
+    <section className="relative py-20 lg:py-32">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center max-w-7xl mx-auto">
             
-            {/* Left Column - Content Container */}
+            {/* Left Column - Content */}
             <motion.div
-              className="space-y-8"
-              initial={{ opacity: 0, x: -50 }}
+              className="space-y-8 lg:space-y-10"
+              initial={{ opacity: 0, x: -60 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              transition={{ duration: 0.9, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              <Card className="backdrop-blur border-emerald-200/50 shadow-xl">
-  <CardBody className="p-8">
+              <Card className="backdrop-blur-sm bg-background/50 border-default-200 shadow-2xl hover:shadow-primary/10 transition-all duration-500">
+                <CardBody className="p-8 lg:p-10">
                   <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2, duration: 0.6 }}
+                    transition={{ delay: 0.2, duration: 0.7 }}
                     viewport={{ once: true }}
                   >
-                    <Chip color="primary" variant="flat" className="mb-4">
-                      O mnie
-                    </Chip>
-                    <h1 className="text-3xl font-bold text-white-300 mb-6">
-O mnie — ale dla Ciebie                    </h1>
-                     
-                    <div className="space-y-4 text-white-300">
-                                            <p className="leading-relaxed font-bold ">
-
-                                            Angielski bez stresu, za to z celem.
-                      </p>
-
-                      <p className="leading-relaxed">
-Nie musisz znać wszystkich czasów ani mówić perfekcyjnie, żeby dogadać się z ludźmi. 
-Potrzebujesz tylko przestrzeni, w której możesz popełniać błędy, ćwiczyć bez presji i widzieć efekty.                      </p>
-                      <p className="leading-relaxed">
-Nazywam się Lidia i tworzę właśnie taką przestrzeń — pomagam przełamać blokadę, poczuć się pewnie i mówić po angielsku 
-w zgodzie ze sobą. Nie odhaczamy zadań z podręcznika. Rozmawiamy o tym, co dla Ciebie ważne. 
-Praktycznie, skutecznie i z lekkością.
-
-Chcesz, żeby angielski wreszcie miał sens? Zrób pierwszy krok. Ja zajmę się resztą.                      </p>
-                    </div>
-                  </motion.div>
-
-                  <motion.div
-                    className="mt-8 grid grid-cols-2 gap-4"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4, duration: 0.6 }}
-                    viewport={{ once: true }}
-                  >
-                    <div className="text-center p-4 bg-primary-100 rounded-lg">
-                      <div className="text-2xl font-bold text-white-300">500+</div>
-                      <div className="text-sm text-white-300">Uczniów</div>
-                    </div>
-                    <div className="text-center p-4 bg-primary-100 rounded-lg">
-                      <div className="text-2xl font-bold text-white-300">5+</div>
-                      <div className="text-sm text-white-300">Lat doświadczenia</div>
-                    </div>
-                  </motion.div>
-
-                  <motion.div
-                    className="mt-6"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.6, duration: 0.6 }}
-                    viewport={{ once: true }}
-                  >
-                    <Button
-                  as="a"
-  href="https://calendly.com/linglow/30min"
-                  target="_blank"
-                  rel="noreferrer"
-                      color="primary"
-                      variant="flat"
-                      size="lg"
-                      className="w-full"
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     >
-                      <p className="text-big text-primary-900 font-bold">Umów konsultację</p>
-                    </Button>
+                      <Chip 
+                        color="primary" 
+                        variant="flat" 
+                        className="mb-6 font-semibold"
+                      >
+                        O mnie
+                      </Chip>
+                    </motion.div>
+                    
+                    <motion.h1 
+                      className="text-4xl lg:text-5xl font-bold text-foreground mb-8 leading-tight"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.3, duration: 0.7 }}
+                      viewport={{ once: true }}
+                    >
+                      O mnie — ale dla <span className="text-primary">Ciebie</span>
+                    </motion.h1>
+                     
+                    <div className="space-y-6 text-foreground">
+                      <motion.p 
+                        className="text-xl font-bold text-primary leading-relaxed"
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.4, duration: 0.6 }}
+                        viewport={{ once: true }}
+                      >
+                        Angielski bez stresu, za to z celem.
+                      </motion.p>
+
+                      <motion.p 
+                        className="text-lg leading-relaxed text-foreground-600"
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.5, duration: 0.6 }}
+                        viewport={{ once: true }}
+                      >
+                        Nie musisz znać wszystkich czasów ani mówić perfekcyjnie, żeby dogadać się z ludźmi. 
+                        Potrzebujesz tylko przestrzeni, w której możesz popełniać błędy, ćwiczyć bez presji i widzieć efekty.
+                      </motion.p>
+                      
+                      <motion.p 
+                        className="text-lg leading-relaxed text-foreground-600"
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.6, duration: 0.6 }}
+                        viewport={{ once: true }}
+                      >
+                        Nazywam się <span className="font-semibold text-primary">Lidia</span> i tworzę właśnie taką przestrzeń — pomagam przełamać blokadę, poczuć się pewnie i mówić po angielsku 
+                        w zgodzie ze sobą. Nie odhaczamy zadań z podręcznika. Rozmawiamy o tym, co dla Ciebie ważne. 
+                        Praktycznie, skutecznie i z lekkością.
+                      </motion.p>
+                      
+                      <motion.p 
+                        className="text-lg font-semibold text-foreground leading-relaxed"
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.7, duration: 0.6 }}
+                        viewport={{ once: true }}
+                      >
+                        Chcesz, żeby angielski wreszcie miał sens? Zrób pierwszy krok. Ja zajmę się resztą.
+                      </motion.p>
+                    </div>
+                  </motion.div>
+
+                  {/* Stats */}
+                  <motion.div
+                    className="mt-10 grid grid-cols-2 gap-6"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.8, duration: 0.6 }}
+                    viewport={{ once: true }}
+                  >
+                    <motion.div 
+                      className="text-center p-6 bg-primary/10 rounded-xl border border-primary/20 hover:border-primary/40 transition-all duration-300"
+                      whileHover={{ scale: 1.05, y: -5 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    >
+                      <div className="text-3xl font-bold text-primary mb-2">500+</div>
+                      <div className="text-sm font-medium text-foreground-600">Zadowolonych uczniów</div>
+                    </motion.div>
+                    <motion.div 
+                      className="text-center p-6 bg-secondary/10 rounded-xl border border-secondary/20 hover:border-secondary/40 transition-all duration-300"
+                      whileHover={{ scale: 1.05, y: -5 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    >
+                      <div className="text-3xl font-bold text-secondary mb-2">5+</div>
+                      <div className="text-sm font-medium text-foreground-600">Lat doświadczenia</div>
+                    </motion.div>
+                  </motion.div>
+
+                  {/* CTA Button */}
+                  <motion.div
+                    className="mt-8"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1, duration: 0.6 }}
+                    viewport={{ once: true }}
+                  >
+                    <motion.div
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <Button
+                        as="a"
+                        href="https://calendly.com/linglow/30min"
+                        target="_blank"
+                        rel="noreferrer"
+                        color="primary"
+                        className="w-full font-bold text-lg py-6 shadow-lg hover:shadow-xl transition-all duration-300"
+                        size="lg"
+                      >
+                        Umów bezpłatną konsultację
+                      </Button>
+                    </motion.div>
                   </motion.div>
                 </CardBody>
               </Card>
 
-              {/* Certyfikaty/Osiągnięcia */}
+              {/* Certyfikaty */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.8, duration: 0.6 }}
+                transition={{ delay: 1.2, duration: 0.6 }}
                 viewport={{ once: true }}
-                className="flex flex-wrap gap-3"
+                className="flex flex-wrap gap-4 justify-center lg:justify-start"
               >
-                <Chip color="success" variant="flat">TESOL Certified</Chip>
-                <Chip color="primary" variant="flat">Cambridge Certified</Chip>
-                <Chip color="secondary" variant="flat">Business English</Chip>
+                <motion.div whileHover={{ scale: 1.05, rotate: 1 }}>
+                  <Chip color="success" variant="flat" className="font-medium px-4 py-2">
+                    TESOL Certified
+                  </Chip>
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.05, rotate: -1 }}>
+                  <Chip color="primary" variant="flat" className="font-medium px-4 py-2">
+                    Cambridge Certified
+                  </Chip>
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.05, rotate: 1 }}>
+                  <Chip color="secondary" variant="flat" className="font-medium px-4 py-2">
+                    Business English
+                  </Chip>
+                </motion.div>
               </motion.div>
             </motion.div>
 
-            {/* Right Column - Twoje Zdjęcie */}
+            {/* Right Column - Zdjęcie */}
             <motion.div
-              className="relative mx-auto max-w-md"
-              initial={{ opacity: 0, x: 50 }}
+              className="relative mx-auto max-w-lg"
+              initial={{ opacity: 0, x: 60 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+              transition={{ duration: 0.9, ease: "easeOut", delay: 0.4 }}
               viewport={{ once: true }}
             >
               <div className="relative">
-                {/* Glowing background */}
+                {/* Subtle glow effect */}
                 <motion.div
-                  className="absolute -inset-6 bg-gradient-to-r from-emerald-400/30 to-green-500/30 rounded-3xl blur-2xl"
+                  className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-3xl blur-2xl opacity-60"
                   animate={{ 
                     scale: [1, 1.05, 1],
-                    opacity: [0.5, 0.7, 0.5]
+                    opacity: [0.4, 0.6, 0.4]
                   }}
                   transition={{ 
                     repeat: Infinity, 
@@ -365,67 +436,125 @@ Chcesz, żeby angielski wreszcie miał sens? Zrób pierwszy krok. Ja zajmę się
                 />
 
                 {/* Photo container */}
-                <Card className="relative z-10 overflow-hidden">
-                  <CardBody className="p-0">
-                    <motion.div
-                      className="aspect-[4/5] bg-gradient-to-br from-emerald-100 to-green-200 flex items-center justify-center text-emerald-700 font-semibold text-lg relative overflow-hidden"
-                      whileHover={{ scale: 1.02 }}
-                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                    >
-                      <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/50 to-transparent"></div>
-                      <div className="relative z-10">
-                        [Tutaj Twoje zdjęcie]
-                      </div>
-                    </motion.div>
-                  </CardBody>
-                </Card>
-
-                {/* Floating decorative elements */}
                 <motion.div
-                  className="absolute -top-4 -right-4 z-20"
-                  animate={{ 
-                    rotate: [0, 360],
-                    scale: [1, 1.1, 1]
-                  }}
-                  transition={{ 
-                    rotate: { repeat: Infinity, duration: 8, ease: "linear" },
-                    scale: { repeat: Infinity, duration: 4, ease: "easeInOut" }
-                  }}
+                  className="relative z-10"
+                  whileHover={{ y: -8, rotate: 1 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 >
-                  <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold">🎓</span>
-                  </div>
+                  <Card className="overflow-hidden shadow-2xl bg-background border-default-200 hover:shadow-primary/20 transition-all duration-500">
+                    <CardBody className="p-0">
+                      <div className="aspect-[4/5] relative overflow-hidden">
+                        <motion.img
+                          src="/lidia.jpg"
+                          alt="Lidia - Nauczycielka angielskiego Linglow"
+                          className="w-full h-full object-cover"
+                          whileHover={{ scale: 1.05 }}
+                          transition={{ duration: 0.5, ease: "easeOut" }}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-background/10 via-transparent to-transparent"></div>
+                      </div>
+                    </CardBody>
+                  </Card>
                 </motion.div>
 
+                {/* Floating rating card */}
                 <motion.div
                   className="absolute -bottom-6 -left-6 z-20"
                   animate={{ 
                     y: [0, -10, 0],
-                    x: [0, 5, 0]
+                    rotate: [0, 2, -2, 0]
                   }}
                   transition={{ 
                     repeat: Infinity, 
-                    duration: 5, 
-                    ease: "easeInOut",
-                    delay: 1
+                    duration: 6, 
+                    ease: "easeInOut"
                   }}
                 >
-                  <Card>
-                    <CardBody className="p-3 bg-gradient-to-br from-blue-400 to-blue-500">
-                      <div className="flex items-center gap-2 text-white">
-                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                        </svg>
-                        <span className="text-sm font-medium">5.0</span>
+                  <Card className="shadow-xl border-default-200">
+                    <CardBody className="p-4 bg-primary/10">
+                      <div className="flex items-center gap-3">
+                        <div className="flex gap-1">
+                          {[...Array(5)].map((_, i) => (
+                            <motion.div
+                              key={i}
+                              className="w-4 h-4 bg-warning rounded-sm"
+                              initial={{ scale: 0 }}
+                              animate={{ scale: 1 }}
+                              transition={{ 
+                                delay: i * 0.1, 
+                                type: "spring",
+                                stiffness: 500,
+                                damping: 10
+                              }}
+                            />
+                          ))}
+                        </div>
+                        <span className="font-bold text-lg text-foreground">5.0</span>
+                      </div>
+                      <div className="text-sm font-medium text-foreground-600 mt-1">Średnia ocen</div>
+                    </CardBody>
+                  </Card>
+                </motion.div>
+
+                {/* Floating badge */}
+                <motion.div
+                  className="absolute -top-4 -right-4 z-20"
+                  animate={{ 
+                    rotate: [0, 10, -10, 0],
+                    scale: [1, 1.1, 1]
+                  }}
+                  transition={{ 
+                    repeat: Infinity, 
+                    duration: 8, 
+                    ease: "easeInOut"
+                  }}
+                >
+                  <Card className="shadow-xl border-success/20">
+                    <CardBody className="p-3 bg-success/10">
+                      <div className="w-10 h-10 bg-success rounded-full flex items-center justify-center">
+                        <div className="w-4 h-4 bg-background rounded-full"></div>
                       </div>
                     </CardBody>
                   </Card>
+                </motion.div>
+
+                {/* Decorative element */}
+                <motion.div
+                  className="absolute top-1/3 -left-8 z-20"
+                  animate={{ 
+                    x: [0, 10, 0],
+                    y: [0, -5, 0],
+                    rotate: [0, 180, 360]
+                  }}
+                  transition={{ 
+                    repeat: Infinity, 
+                    duration: 10, 
+                    ease: "easeInOut"
+                  }}
+                >
+                  <div className="w-6 h-6 bg-secondary rounded-full opacity-80"></div>
+                </motion.div>
+
+                <motion.div
+                  className="absolute bottom-1/4 -right-6 z-20"
+                  animate={{ 
+                    scale: [1, 1.2, 1],
+                    rotate: [0, -90, 0]
+                  }}
+                  transition={{ 
+                    repeat: Infinity, 
+                    duration: 7, 
+                    ease: "easeInOut",
+                    delay: 2
+                  }}
+                >
+                  <div className="w-8 h-8 bg-primary/30 rounded-full"></div>
                 </motion.div>
               </div>
             </motion.div>
           </div>
         </div>
-       </section>
+      </section>
 
       {/* TRZECIA SEKCJA - JAK MOGĘ CI POMÓC */}
       <section className="relative py-32 overflow-hidden">
