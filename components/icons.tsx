@@ -184,4 +184,6 @@ export const SearchIcon = (props: IconSvgProps) => (
       strokeWidth="2"
     />
   </svg>
+
+  
 );

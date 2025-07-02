@@ -8,7 +8,8 @@ import { Chip } from "@heroui/chip";
 import { Badge } from "@heroui/badge";
 import { title } from "@/components/primitives";
 
-export default function PricingTable() {
+
+export default function SubscriptionPricingTable() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -19,78 +20,79 @@ export default function PricingTable() {
 
   const plans = [
     {
-      id: 'single',
-      name: 'Jedna lekcja',
-      description: 'Spróbuj i przekonaj się, jak może wyglądać dobra nauka.',
-      price: 85,
-      originalPrice: null,
-      pricePerLesson: null,
-      discount: null,
+      id: 'light',
+      name: 'Light',
+      description: 'Na spokojnie, w swoim tempie',
+      price: 299,
+      originalPrice: 399,
+      priceNote: 'miesięcznie',
+      discount: 25,
+      lessons: '1 tygodniowo (4/mc)',
       popular: false,
-      buttonText: 'Wybierz Lekcję',
-      calendlyLink: 'https://calendly.com/linglow/30min'
+      buttonText: 'Wybierz Light',
+      calendlyLink: 'https://calendly.com/linglow/linglow-light',
+      features: [
+        { name: 'Tablica Postępów', included: true },
+        { name: 'Materiały PDF', included: true },
+        { name: 'Podsumowanie tygodnia', included: false },
+        { name: 'Audio Feedback', included: false },
+        { name: 'Writing task z korektą', included: false },
+        { name: 'Mini-pakiety tematyczne', included: false },
+        { name: 'Wsparcie tekstowe (chat)', included: false },
+        { name: 'Newsletter', included: true }
+      ]
     },
     {
-      id: 'package4',
-      name: 'Pakiet 4 lekcji',
-      description: 'Doskonałe tempo dla tych, którzy chcą widzieć postępy i czuć satysfakcję.',
-      price: 306,
-      originalPrice: 340,
-      pricePerLesson: '76,50 zł za lekcję',
-      discount: 10,
+      id: 'intensive',
+      name: 'Intensive',
+      description: 'Dla tych, którzy chcą przyspieszać',
+      price: 559,
+      originalPrice: 749,
+      priceNote: 'miesięcznie',
+      discount: 25,
+      lessons: '2 tygodniowo (8/mc)',
       popular: true,
-      buttonText: 'Wybierz Pakiet',
-      calendlyLink: 'https://calendly.com/linglow/pakiet5?back=1'
+      buttonText: 'Wybierz Intensive',
+      calendlyLink: 'https://calendly.com/linglow/linglow-intense',
+      features: [
+        { name: 'Tablica Postępów', included: true },
+        { name: 'Materiały PDF', included: true },
+        { name: 'Podsumowanie tygodnia', included: true, note: 'co 2 tygodnie' },
+        { name: 'Audio Feedback', included: true, note: '1/mc' },
+        { name: 'Writing task z korektą', included: false },
+        { name: 'Mini-pakiety tematyczne', included: true },
+        { name: 'Wsparcie tekstowe (chat)', included: false },
+        { name: 'Newsletter', included: true }
+      ]
     },
     {
-      id: 'package8',
-      name: 'Pakiet 8 lekcji',
-      description: 'Pełne zaangażowanie, które procentuje na każdym kroku.',
-      price: 544,
-      originalPrice: 680,
-      pricePerLesson: '68 zł za lekcję',
-      discount: 20,
+      id: 'plus',
+      name: 'Plus',
+      description: 'Pełne zanurzenie z osobistym wsparciem',
+      price: 899,
+      originalPrice: 1199,
+      priceNote: 'miesięcznie',
+      discount: 25,
+      lessons: '3 tygodniowo (12/mc)',
       popular: false,
-      buttonText: 'Wybierz Pakiet',
-      calendlyLink: 'https://calendly.com/linglow/pakiet8?back=1'
+      buttonText: 'Wybierz Plus',
+      calendlyLink: 'https://calendly.com/linglow/linglow-plus',
+      features: [
+        { name: 'Tablica Postępów', included: true },
+        { name: 'Materiały PDF', included: true },
+        { name: 'Podsumowanie tygodnia', included: true, note: 'co tydzień' },
+        { name: 'Audio Feedback', included: true, note: '2/mc' },
+        { name: 'Writing task z korektą', included: true, note: '1/mc' },
+        { name: 'Mini-pakiety tematyczne', included: true },
+        { name: 'Wsparcie tekstowe (chat)', included: true },
+        { name: 'Newsletter', included: true }
+      ]
     }
   ];
 
   return (
-    <section className="relative py-32 overflow-hidden">
-      {/* Background Animation */}
-      <motion.div
-        className="absolute top-1/4 left-1/3 w-72 h-72 bg-gradient-to-r from-emerald-300/10 to-green-400/15 rounded-full blur-3xl"
-        animate={{
-          scale: [1, 1.4, 1],
-          opacity: [0.1, 0.3, 0.1],
-          x: [0, 40, 0],
-          y: [0, -25, 0]
-        }}
-        transition={{
-          repeat: Infinity,
-          duration: 15,
-          ease: "easeInOut"
-        }}
-      />
-
-      <motion.div
-        className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-l from-primary to-emerald-300/12 rounded-full blur-3xl"
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.08, 0.25, 0.08],
-          x: [0, -50, 0],
-          y: [0, 30, 0]
-        }}
-        transition={{
-          repeat: Infinity,
-          duration: 18,
-          ease: "easeInOut",
-          delay: 5
-        }}
-      />
-
-      <div className="container mx-auto px-6 lg:px-8 relative z-10">
+    <section className="py-24">
+      <div className="container mx-auto px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
 
           {/* Header */}
@@ -109,13 +111,23 @@ export default function PricingTable() {
               viewport={{ once: true }}
             >
               <span className="bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 bg-clip-text text-transparent">
-                Wybierz swój plan nauki
+                Plany Subskrypcyjne Linglow
               </span>
             </motion.h2>
+            <br></br>
+            <motion.p
+              className="text-lg text-default-600 max-w-2xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              Wybierz plan dopasowany do Twojego tempa nauki i celów językowych
+            </motion.p>
           </motion.div>
 
           {/* Pricing Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {plans.map((plan, index) => (
               <motion.div
                 key={plan.id}
@@ -138,85 +150,122 @@ export default function PricingTable() {
                       variant="solid"
                       className="bg-gradient-to-r from-emerald-500 to-green-500 text-white font-semibold"
                     >
-                      popularny wybór
+                      Najczęściej wybierany
                     </Chip>
                   </motion.div>
                 )}
 
                 <motion.div
-                  whileHover={{
-                    scale: plan.popular ? 1.05 : 1.02,
+                  whileHover={!plan.popular ? {
+                    scale: 1.02,
                     y: -8
-                  }}
+                  } : {}}
                   transition={{ duration: 0.3 }}
                 >
                   <Card
                     className={`h-full transition-all duration-300 ${
                       plan.popular
-                        ? 'border-2 border-emerald-500 shadow-2xl shadow-emerald-500/20'
+                        ? 'border-2 border-emerald-500 shadow-2xl shadow-emerald-500/20 scale-105'
                         : 'border border-gray-200 hover:border-emerald-300 hover:shadow-xl'
                     }`}
                   >
                     <CardBody className="p-8">
-                      <h3 className="text-2xl font-bold text-foreground mb-3">
-                        {plan.name}
-                      </h3>
-                      <p className="text-default-600 mb-6 leading-relaxed min-h-[3rem]">
-                        {plan.description}
-                      </p>
+                      <div className="text-center mb-8">
+                        <h3 className="text-3xl font-bold text-foreground mb-2">
+                          {plan.name}
+                        </h3>
+                        <p className="text-default-600 mb-4 leading-relaxed">
+                          {plan.description}
+                        </p>
+                        <div className="text-emerald-600 font-semibold text-lg mb-4">
+                          {plan.lessons}
+                        </div>
 
-                      <div className="mb-8">
-                        <div className="flex items-center gap-3 mb-2">
-                          {plan.discount && (
+                        <div className="mb-6">
+                          <div className="flex items-center justify-center gap-3 mb-2">
                             <Badge
                               color="danger"
                               variant="flat"
                               className="text-sm font-semibold"
                             >
-                              -{plan.discount}%
+                              -{plan.discount}% OSZCZĘDNOŚĆ
                             </Badge>
-                          )}
-                        </div>
+                          </div>
 
-                        <div className="flex items-baseline gap-2 mb-2">
-                          {plan.originalPrice && (
+                          <div className="flex items-center justify-center gap-2 mb-1">
                             <span className="text-lg text-default-400 line-through">
                               {plan.originalPrice} zł
                             </span>
-                          )}
-                          <span className="text-4xl font-bold text-foreground">
-                            {plan.price} zł
-                          </span>
+                          </div>
+                          
+                          <div className="flex items-baseline justify-center gap-1">
+                            <span className="text-4xl font-bold text-foreground">
+                              {plan.price} zł
+                            </span>
+                            <span className="text-default-600">
+                              / {plan.priceNote}
+                            </span>
+                          </div>
                         </div>
 
-                        {plan.pricePerLesson && (
-                          <p className="text-emerald-600 font-semibold text-lg">
-                            {plan.pricePerLesson}
-                          </p>
-                        )}
+                        <motion.div
+                          whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.98 }}
+                          className="mb-8"
+                        >
+                          <Button
+                            as={motion.a}
+                            href={plan.calendlyLink}
+                            target="_blank"
+                            rel="noreferrer"
+                            color={plan.popular ? "success" : "default"}
+                            variant={plan.popular ? "solid" : "bordered"}
+                            size="lg"
+                            className={`w-full font-semibold ${
+                              plan.popular
+                                ? 'bg-gradient-to-r from-emerald-500 to-green-500 text-white shadow-lg'
+                                : 'hover:bg-emerald-50 hover:border-emerald-300 hover:text-emerald-700'
+                            }`}
+                          >
+                            {plan.buttonText}
+                          </Button>
+                        </motion.div>
                       </div>
 
-                      <motion.div
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                      >
-                        <Button
-                          as={motion.a}
-                          href={plan.calendlyLink}
-                          target="_blank"
-                          rel="noreferrer"
-                          color={plan.popular ? "success" : "default"}
-                          variant={plan.popular ? "solid" : "bordered"}
-                          size="lg"
-                          className={`w-full font-semibold ${
-                            plan.popular
-                              ? 'bg-gradient-to-r from-emerald-500 to-green-500 text-white shadow-lg'
-                              : 'hover:bg-emerald-50 hover:border-emerald-300 hover:text-emerald-700'
-                          }`}
-                        >
-                          {plan.buttonText}
-                        </Button>
-                      </motion.div>
+                      {/* Features List */}
+                      <div className="space-y-4">
+                        <h4 className="font-semibold text-foreground text-center mb-4">
+                          Co obejmuje plan:
+                        </h4>
+                        {plan.features.map((feature, featureIndex) => (
+                          <motion.div
+                            key={featureIndex}
+                            className="flex items-start gap-3"
+                            initial={{ opacity: 0, x: -10 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.1 * featureIndex, duration: 0.4 }}
+                            viewport={{ once: true }}
+                          >
+                            {feature.included ? (
+                              <span className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0 text-lg">✓</span>
+                            ) : (
+                              <span className="w-5 h-5 text-default-300 mt-0.5 flex-shrink-0 text-lg">✗</span>
+                            )}
+                            <div className="flex-1">
+                              <span className={`text-sm ${
+                                feature.included ? 'text-foreground' : 'text-default-400'
+                              }`}>
+                                {feature.name}
+                              </span>
+                              {feature.note && (
+                                <span className="text-xs text-emerald-600 ml-2">
+                                  ({feature.note})
+                                </span>
+                              )}
+                            </div>
+                          </motion.div>
+                        ))}
+                      </div>
                     </CardBody>
                   </Card>
                 </motion.div>
@@ -226,14 +275,21 @@ export default function PricingTable() {
 
           {/* Footer Note */}
           <motion.div
-            className="text-center mt-12"
+            className="text-center mt-16 space-y-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <p className="text-default-600">
-              Wszystkie ceny zawierają materiały do nauki i wsparcie nauczyciela
+            <div className="flex items-center justify-center gap-2 text-emerald-600 font-semibold">
+              <span className="text-emerald-600 text-lg">✓</span>
+              <span>Gwarancja satysfakcji</span>
+            </div>
+            <p className="text-default-700 text-sm">
+              Wszystkie ceny zawierają VAT. Możesz anulować subskrypcję w każdym momencie.
+            </p>
+            <p className="text-default-600 text-xs">
+              Ceny promocyjne dostępne przez ograniczony czas
             </p>
           </motion.div>
         </div>

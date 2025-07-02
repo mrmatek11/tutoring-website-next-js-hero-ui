@@ -243,7 +243,7 @@ export default function LingGlowImproved() {
       
     </section>
 
-    <section className="relative py-16 lg:py-32">
+    <section id="o-mnie" className="relative py-16 lg:py-32">
   <div className="container mx-auto px-4 sm:px-6 lg:px-8">
     <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-center max-w-7xl mx-auto">
       
@@ -1166,10 +1166,14 @@ export default function LingGlowImproved() {
           </div>
         </div>
       </section>
+      <div id="pakiety">
       <PricingTable />
+      </div>
       {/* PIĄTA SEKCJA - CTA */}
 <SuccessStories />
+<div id="kontakt">
       <CallToActionContact />
+      </div>
     </div>
   );
 }

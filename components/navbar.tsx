@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Navbar as HeroUINavbar,
   NavbarContent,
@@ -13,6 +15,7 @@ import NextLink from "next/link";
 import clsx from "clsx";
 
 import { ThemeSwitch } from "@/components/theme-switch";
+import { useScrollToSection } from "@/hooks/useScrollToSection";
 
 const LinglowLogo = () => (
   <svg 
@@ -46,6 +49,8 @@ const LinglowLogo = () => (
 );
 
 export const Navbar = () => {
+  const scrollToSection = useScrollToSection();
+
   return (
     <HeroUINavbar 
       maxWidth="xl" 
@@ -67,7 +72,43 @@ export const Navbar = () => {
         </NavbarBrand>
       </NavbarContent>
 
- 
+      {/* Desktop Navigation */}
+      <NavbarContent className="hidden sm:flex basis-1/5 sm:basis-full" justify="center">
+        <div className="flex gap-8">
+          <NavbarItem>
+            <button 
+              onClick={() => scrollToSection('o-mnie')}
+              className="text-foreground/80 hover:text-foreground transition-colors duration-200 font-medium cursor-pointer bg-transparent border-none"
+            >
+              O mnie
+            </button>
+          </NavbarItem>
+          <NavbarItem>
+            <button 
+              onClick={() => scrollToSection('pakiety')}
+              className="text-foreground/80 hover:text-foreground transition-colors duration-200 font-medium cursor-pointer bg-transparent border-none"
+            >
+              Pakiety
+            </button>
+          </NavbarItem>
+          <NavbarItem>
+            <NextLink 
+              href="/blog" 
+              className="text-foreground/80 hover:text-foreground transition-colors duration-200 font-medium"
+            >
+              Blog
+            </NextLink>
+          </NavbarItem>
+          <NavbarItem>
+            <button 
+              onClick={() => scrollToSection('kontakt')}
+              className="text-foreground/80 hover:text-foreground transition-colors duration-200 font-medium cursor-pointer bg-transparent border-none"
+ >
+              Kontakt
+            </button>
+          </NavbarItem>
+        </div>
+      </NavbarContent>
 
       <NavbarContent
         className="hidden sm:flex basis-1/5 sm:basis-full"
@@ -96,19 +137,46 @@ export const Navbar = () => {
       <NavbarMenu className="backdrop-blur-md bg-background/95 border-t border-divider/20">
         <div className="mx-4 mt-6 flex flex-col gap-4">
           <NavbarMenuItem>
+            <button 
+              onClick={() => scrollToSection('o-mnie')}
+              className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors duration-200 text-left w-full bg-transparent border-none"
+            >
+              O mnie
+            </button>
+          </NavbarMenuItem>
+          
+          <NavbarMenuItem>
+            <button 
+              onClick={() => scrollToSection('pakiety')}
+              className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors duration-200 text-left w-full bg-transparent border-none"
+            >
+              Pakiety
+            </button>
+          </NavbarMenuItem>
+          
+          <NavbarMenuItem>
             <NextLink 
-              href="/book" 
+              href="/blog" 
               className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors duration-200"
             >
-              Sprawdź dostępność
+              Blog
             </NextLink>
+          </NavbarMenuItem>
+          
+          <NavbarMenuItem>
+            <button 
+              onClick={() => scrollToSection('kontakt')}
+              className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors duration-200 text-left w-full bg-transparent border-none"
+            >
+              Kontakt
+            </button>
           </NavbarMenuItem>
           
           <NavbarMenuItem className="mt-4">
             <Button
               as={Link}
               className="w-full text-white bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 shadow-lg font-semibold"
-              href="#"
+              href="https://calendly.com/linglow/"
               variant="solid"
               radius="full"
               size="lg"
