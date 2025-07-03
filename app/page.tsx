@@ -326,7 +326,7 @@ export default function LingGlowImproved() {
                 whileHover={{ scale: 1.02, y: -2 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                <div className="text-2xl lg:text-3xl font-bold text-primary mb-1 lg:mb-2">500+</div>
+                <div className="text-2xl lg:text-3xl font-bold text-primary mb-1 lg:mb-2">50+</div>
                 <div className="text-xs lg:text-sm font-medium text-foreground-600">Zadowolonych uczniów</div>
               </motion.div>
               <motion.div 
