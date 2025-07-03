@@ -100,7 +100,7 @@ export default function SubscriptionPricingTable() {
     duration: '50 minut',
     popular: true,
     buttonText: 'Zarezerwuj Lekcję',
-    calendlyLink: 'https://calendly.com/your-individual-lesson-link',
+    calendlyLink: 'https://calendly.com/linglow/30min',
     features: [
       { name: 'Lekcja 1-na-1 z doświadczonym lektorem', included: true },
       { name: 'Materiały dostosowane do Twojego poziomu', included: true },
