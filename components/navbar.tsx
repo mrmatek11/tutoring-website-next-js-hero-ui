@@ -117,15 +117,15 @@ export const Navbar = () => {
         <NavbarItem className="hidden sm:flex gap-3 items-center">
           <ThemeSwitch />
           <div className="w-px h-6 bg-divider" />
-          <Button
-            as={Link}
-            className="text-sm font-semibold text-white bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 shadow-lg hover:shadow-emerald-500/25 transition-all duration-300 px-6"
-            href="https://calendly.com/linglow/"
-            variant="solid"
-            radius="full"
-          >
-            Zabookuj lekcję
-          </Button>
+<Button
+  className="text-sm font-semibold text-white bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 shadow-lg hover:shadow-emerald-500/25 transition-all duration-300 px-6"
+  onClick={() => scrollToSection('pakiety')}
+  variant="solid"
+  radius="full"
+>
+  Zabookuj lekcję
+</Button>
+
         </NavbarItem>
       </NavbarContent>
 
@@ -173,16 +173,15 @@ export const Navbar = () => {
           </NavbarMenuItem>
           
           <NavbarMenuItem className="mt-4">
-            <Button
-              as={Link}
-              className="w-full text-white bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 shadow-lg font-semibold"
-              href="https://calendly.com/linglow/"
-              variant="solid"
-              radius="full"
-              size="lg"
-            >
-              Zabookuj lekcję
-            </Button>
+<Button
+  className="w-full text-white bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 shadow-lg font-semibold"
+  onClick={() => scrollToSection('pakiety')}
+  variant="solid"
+  radius="full"
+  size="lg"
+>
+  Zabookuj lekcję
+</Button>
           </NavbarMenuItem>
         </div>
       </NavbarMenu>

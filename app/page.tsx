@@ -107,34 +107,31 @@ export default function LingGlowImproved() {
               transition={{ delay: 0.8, duration: 0.8 }}
               className="pt-4 flex flex-col sm:flex-row gap-4"
             >
-              <Button
-                as={motion.a}      
-                href="https://calendly.com/linglow/"
-                target="_blank"
-                rel="noreferrer"
-                color="success"
-                size="lg"
-                radius="lg"
-                className="bg-gradient-to-r from-emerald-600 to-green-600 text-white font-semibold px-8 py-6 text-lg shadow-xl hover:shadow-2xl transition-shadow"
-                endContent={
-                  <motion.svg
-                    className="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    initial={{ x: 0 }}
-                    whileHover={{ x: 5 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </motion.svg>
-                }
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Zarezerwuj lekcję próbną
-              </Button>
-              
+<Button
+  as="a"
+  href="#pakiety"
+  color="success"
+  size="lg"
+  radius="lg"
+  className="bg-gradient-to-r from-emerald-600 to-green-600 text-white font-semibold px-8 py-6 text-lg shadow-xl hover:shadow-2xl transition-shadow"
+  endContent={
+    <motion.svg
+      className="w-5 h-5"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      initial={{ x: 0 }}
+      whileHover={{ x: 5 }}
+      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+    </motion.svg>
+  }
+  whileHover={{ scale: 1.05, y: -2 }}
+  whileTap={{ scale: 0.98 }}
+>
+  Zarezerwuj lekcję próbną
+</Button>
 
             </motion.div>
 
