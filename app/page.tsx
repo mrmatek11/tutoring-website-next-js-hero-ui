@@ -31,7 +31,7 @@ export default function LingGlowImproved() {
   return (
     <div className="min-h-screen">
       {/* HERO SECTION - Zmniejszona wysokość, usunięte centrowanie w pionie */}
-      <section className="relative pt-16 pb-24 overflow-hidden">
+      <section className="relative pt-4 pb-24 overflow-hidden">
         {/* Floating background elements - zoptymalizowane */}
 
 
@@ -213,27 +213,8 @@ export default function LingGlowImproved() {
             </motion.div>
           </motion.div>
 
-          {/* Right Column - Calendly Embed */}
-          <motion.div
-            className="relative w-full overflow-hidden"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
-          >
-            <div className="sticky top-24 w-full max-w-full">
-              <CalendlyEmbed
-                url="https://calendly.com/linglow/"
-                title="Zarezerwuj swoją lekcję próbną"
-                description="Wybierz dogodny termin i rozpocznij swoją przygodę z angielskim już dziś!"
-                height={650}
-                prefill={{
-                  customAnswers: {
-                    "source": "landing-page-hero"
-                  }
-                }}
-              />
-            </div>
-          </motion.div>
+{/* Right Column - Clean Interactive Design */}
+
         </div>
       </div>
 
