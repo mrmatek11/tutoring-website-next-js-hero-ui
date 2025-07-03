@@ -30,7 +30,7 @@ export default function SubscriptionPricingTable() {
       lessons: '1 tygodniowo (4/mc)',
       popular: false,
       buttonText: 'Wybierz Light',
-      calendlyLink: 'https://calendly.com/linglow/linglow-light',
+      calendlyLink: 'https://buy.stripe.com/14AeVf5Auf9x7Ve0Ay8g000',
       features: [
         { name: 'Tablica Postępów', included: true },
         { name: 'Materiały PDF', included: true },
@@ -53,7 +53,7 @@ export default function SubscriptionPricingTable() {
       lessons: '2 tygodniowo (8/mc)',
       popular: true,
       buttonText: 'Wybierz Intensive',
-      calendlyLink: 'https://calendly.com/linglow/linglow-intense',
+      calendlyLink: 'https://buy.stripe.com/3cI9AVd2W4uTa3mero8g001',
       features: [
         { name: 'Tablica Postępów', included: true },
         { name: 'Materiały PDF', included: true },
@@ -76,7 +76,7 @@ export default function SubscriptionPricingTable() {
       lessons: '3 tygodniowo (12/mc)',
       popular: false,
       buttonText: 'Wybierz Plus',
-      calendlyLink: 'https://calendly.com/linglow/linglow-plus',
+      calendlyLink: 'https://buy.stripe.com/00waEZ2oi6D1fnGero8g002',
       features: [
         { name: 'Tablica Postępów', included: true },
         { name: 'Materiały PDF', included: true },
