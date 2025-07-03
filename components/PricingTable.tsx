@@ -97,10 +97,10 @@ export default function SubscriptionPricingTable() {
     description: 'Pojedyncza lekcja dopasowana do Twoich potrzeb',
     price: 85,
     priceNote: 'za lekcję',
-    duration: '50 minut',
+    duration: '60 minut',
     popular: true,
     buttonText: 'Zarezerwuj Lekcję',
-    calendlyLink: 'https://calendly.com/linglow/30min',
+    calendlyLink: 'https://calendly.com/your-individual-lesson-link',
     features: [
       { name: 'Lekcja 1-na-1 z doświadczonym lektorem', included: true },
       { name: 'Materiały dostosowane do Twojego poziomu', included: true },
@@ -173,7 +173,7 @@ export default function SubscriptionPricingTable() {
                         variant="flat"
                         className="text-sm font-semibold"
                       >
-                        -%{plan.discount}
+                        -{plan.discount}% OSZCZĘDNOŚĆ
                       </Badge>
                     </div>
 
@@ -257,104 +257,85 @@ export default function SubscriptionPricingTable() {
     </div>
   );
 
-  const renderIndividualLesson = () => (
-    <div className="flex justify-center max-w-6xl mx-auto">
-      <motion.div
-        className="relative max-w-md w-full"
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        <motion.div
-          className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.3, duration: 0.5 }}
+const renderIndividualLesson = () => (
+  <div className="flex justify-center max-w-6xl mx-auto">
+    <div className="relative max-w-md w-full mt-6">
+      {/* Chip umieszczony nad kartą */}
+      <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 z-10">
+        <Chip
+          color="primary"
+          variant="solid"
+          className="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold"
         >
-          <Chip
-            color="primary"
-            variant="solid"
-            className="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold"
-          >
-            Elastyczna opcja
-          </Chip>
-        </motion.div>
+          Elastyczna opcja
+        </Chip>
+      </div>
+      
+      {/* Karta */}
+      <Card className="h-full border-2 border-blue-500 shadow-2xl shadow-blue-500/20">
+        <CardBody className="p-8">
+          <div className="text-center mb-8">
+            <h3 className="text-3xl font-bold text-foreground mb-2">
+              {individualLesson.name}
+            </h3>
+            <p className="text-default-600 mb-4 leading-relaxed">
+              {individualLesson.description}
+            </p>
+            <div className="text-blue-600 font-semibold text-lg mb-4">
+              {individualLesson.duration}
+            </div>
 
-        <motion.div
-          whileHover={{ scale: 1.02, y: -8 }}
-          transition={{ duration: 0.3 }}
-        >
-          <Card className="h-full border-2 border-blue-500 shadow-2xl shadow-blue-500/20">
-            <CardBody className="p-8">
-              <div className="text-center mb-8">
-                <h3 className="text-3xl font-bold text-foreground mb-2">
-                  {individualLesson.name}
-                </h3>
-                <p className="text-default-600 mb-4 leading-relaxed">
-                  {individualLesson.description}
-                </p>
-                <div className="text-blue-600 font-semibold text-lg mb-4">
-                  {individualLesson.duration}
-                </div>
-
-                <div className="mb-6">
-                  <div className="flex items-baseline justify-center gap-1">
-                    <span className="text-4xl font-bold text-foreground">
-                      {individualLesson.price} zł
-                    </span>
-                    <span className="text-default-600">
-                      / {individualLesson.priceNote}
-                    </span>
-                  </div>
-                </div>
-
-                <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="mb-8"
-                >
-                  <Button
-                    as={motion.a}
-                    href={individualLesson.calendlyLink}
-                    target="_blank"
-                    rel="noreferrer"
-                    color="primary"
-                    variant="solid"
-                    size="lg"
-                    className="w-full font-semibold bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg"
-                  >
-                    {individualLesson.buttonText}
-                  </Button>
-                </motion.div>
+            <div className="mb-6">
+              <div className="flex items-baseline justify-center gap-1">
+                <span className="text-4xl font-bold text-foreground">
+                  {individualLesson.price} zł
+                </span>
+                <span className="text-default-600">
+                  / {individualLesson.priceNote}
+                </span>
               </div>
+            </div>
 
-              <div className="space-y-4">
-                <h4 className="font-semibold text-foreground text-center mb-4">
-                  Co obejmuje lekcja:
-                </h4>
-                {individualLesson.features.map((feature, featureIndex) => (
-                  <motion.div
-                    key={featureIndex}
-                    className="flex items-start gap-3"
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                     transition={{ delay: 0.1 * featureIndex, duration: 0.4 }}
-                  >
-                    <span className="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0 text-lg">✓</span>
-                    <div className="flex-1">
-                      <span className="text-sm text-foreground">
-                        {feature.name}
-                      </span>
-                    </div>
-                  </motion.div>
-                ))}
+            <div className="mb-8">
+              <Button
+                as="a"
+                href={individualLesson.calendlyLink}
+                target="_blank"
+                rel="noreferrer"
+                color="primary"
+                variant="solid"
+                size="lg"
+                className="w-full font-semibold bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg"
+              >
+                {individualLesson.buttonText}
+              </Button>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h4 className="font-semibold text-foreground text-center mb-4">
+              Co obejmuje lekcja:
+            </h4>
+            {individualLesson.features.map((feature, featureIndex) => (
+              <div
+                key={featureIndex}
+                className="flex items-start gap-3"
+              >
+                <span className="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0 text-lg">✓</span>
+                <div className="flex-1">
+                  <span className="text-sm text-foreground">
+                    {feature.name}
+                  </span>
+                </div>
               </div>
-            </CardBody>
-          </Card>
-        </motion.div>
-      </motion.div>
+            ))}
+          </div>
+        </CardBody>
+      </Card>
     </div>
-  );
+  </div>
+);
+
 
   return (
     <section className="py-24" id="pricing">
@@ -392,7 +373,7 @@ export default function SubscriptionPricingTable() {
             </motion.p>
           </motion.div>
 
-          {/* Tabs */}
+          {/* Tabs - poprawione wycentrowanie */}
           <div className="flex justify-center mb-12">
             <Tabs 
               aria-label="Opcje nauki"
@@ -401,28 +382,20 @@ export default function SubscriptionPricingTable() {
               selectedKey={selectedTab}
               onSelectionChange={(key) => setSelectedTab(key as string)}
               classNames={{
-                base: "w-full max-w-md",
-                tabList: "gap-6 w-full rounded-xl p-1 bg-default-100",
+                base: "w-full max-w-md mx-auto", // dodane mx-auto dla lepszego wycentrowania
+                tabList: "gap-0 w-full rounded-xl p-1 bg-default-100 flex justify-center", // dodane flex i justify-center
                 cursor: "bg-white shadow-md",
-                tab: "max-w-fit px-8 h-10 text-medium",
-                tabContent: "group-data-[selected=true]:text-emerald-600 font-medium"
+                tab: "flex-1 px-4 h-10 text-medium", // zmienione z max-w-fit na flex-1 dla równego rozłożenia
+                tabContent: "group-data-[selected=true]:text-emerald-600 font-medium text-center" // dodane text-center
               }}
             >
               <Tab 
                 key="subscription" 
-                title={
-                  <div className="flex items-center gap-2">
-                    <span>Plany Subskrypcyjne</span>
-                  </div>
-                }
+                title="Plany Subskrypcyjne"
               />
               <Tab 
                 key="individual" 
-                title={
-                  <div className="flex items-center gap-2">
-                    <span>Lekcja Pojedyncza</span>
-                  </div>
-                }
+                title="Lekcja Pojedyncza"
               />
             </Tabs>
           </div>
